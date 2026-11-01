@@ -1,114 +1,446 @@
+
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Portfolio DimasDev</title>
+
     <style>
-    body {
-        background-color: #0f172a;
-        color: white;
-        font-family: Arial, sans-serif;
-    }
-        
-    h1 {
-    color: #38bdf8;
-    font-size: 40px;
-    text-align: center;
-    }
+        /* RESET DASAR */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-    h2 {
-    text-align: center;
-    font-size: 24px;
-    }
+        body {
+            background-color: #0f172a;
+            color: white;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
 
+        /* NAVBAR */
         header {
-    background-color: #1e293b;
-    padding: 15px 40px;
-}
+            background-color: #1e293b;
+            padding: 15px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-.logo {
-    color: white;
-    font-size: 28px;
-}
+        .logo {
+            color: white;
+            font-size: 28px;
+        }
 
-.logo span {
-    color: #38bdf8;
-}
+        .logo span {
+            color: #38bdf8;
+        }
 
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
 
-.nav-menu a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-.nav-menu a:hover {
-    color: #38bdf8;
-}
-        
+        .nav-menu a:hover {
+            color: #38bdf8;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 70px 8%;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .welcome {
+            color: #38bdf8;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            color: #cbd5e1;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            color: #cbd5e1;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #38bdf8;
+            color: #0f172a;
+        }
+
+        .btn-secondary {
+            border: 1px solid #38bdf8;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* PENGATURAN SECTION */
+        .section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title span {
+            color: #38bdf8;
+        }
+
+        /* ABOUT */
+        .about {
+            background-color: #1e293b;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            color: #cbd5e1;
+        }
+
+        /* SKILLS */
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background-color: #1e293b;
+            padding: 25px;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            border-color: #38bdf8;
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        /* PROJECTS */
+        .projects {
+            background-color: #1e293b;
+        }
+
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #0f172a;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+        }
+
+        .project-card h3 {
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #cbd5e1;
+        }
+
+        /* CONTACT */
+        .contact-content {
+            text-align: center;
+            color: #cbd5e1;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #020617;
+            padding: 25px;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        /* RESPONSIVE UNTUK HP */
+        @media (max-width: 600px) {
+            header {
+                padding: 15px 5%;
+            }
+
+            .navbar {
+                justify-content: center;
+            }
+
+            .nav-menu {
+                justify-content: center;
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero {
+                min-height: 75vh;
+                padding: 50px 6%;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .section {
+                padding: 60px 6%;
+            }
+        }
     </style>
 </head>
+
 <body>
 
+    <!-- NAVBAR -->
     <header>
-    <nav class="navbar">
-        <h2 class="logo">DimasDev<span>.</span></h2>
+        <nav class="navbar">
 
-        <ul class="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-        </ul>
+            <h2 class="logo">DimasDev<span>.</span></h2>
+
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
         </nav>
-        </header>
+    </header>
 
+    <!-- HERO SECTION -->
     <section class="hero" id="home">
-    <div class="hero-content">
-        <p class="welcome">WELCOME TO MY PORTFOLIO</p>
 
-        <h1>Halo, Saya <span>Dimas Alifianto</span></h1>
+        <div class="hero-content">
 
-        <h2>Admin & Aspiring Software Engineer</h2>
+            <p class="welcome">WELCOME TO MY PORTFOLIO</p>
 
-        <p class="description">
-            Saya memiliki ketertarikan dalam bidang administrasi,
-            teknologi informasi, dan pengembangan website.
-            Saat ini saya terus belajar untuk mengembangkan kemampuan
-            dan menciptakan karya digital.
+            <h1>
+                Halo, Saya <span>Dimas Alifianto</span>
+            </h1>
+
+            <h2>Admin & Aspiring Software Engineer</h2>
+
+            <p class="description">
+                Saya memiliki ketertarikan dalam bidang administrasi,
+                teknologi informasi, dan pengembangan website.
+                Saat ini saya terus belajar untuk mengembangkan kemampuan
+                dan menciptakan karya digital.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    My Projects
+                </a>
+
+                <a href="#about" class="btn btn-secondary">
+                    About Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about" id="about">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <div class="about-content">
+
+            <p>
+                Halo! Saya Dimas Alifianto. Saya memiliki pengalaman
+                dalam bidang administrasi dan pengoperasian komputer.
+                Saya juga sedang mempelajari Software Engineering
+                dan Web Development untuk mengembangkan kemampuan
+                di bidang teknologi.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section" id="skills">
+
+        <h2 class="section-title">
+            My <span>Skills</span>
+        </h2>
+
+        <div class="skills-list">
+
+            <div class="skill-card">
+                <h3>HTML & CSS</h3>
+                <p>Dasar pembuatan dan desain website.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Microsoft Office</h3>
+                <p>Microsoft Word, Excel dasar, dan PowerPoint.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Data Entry</h3>
+                <p>Pengolahan dan penginputan data.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Computer Operation</h3>
+                <p>Pengoperasian komputer dan pengelolaan file.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section projects" id="projects">
+
+        <h2 class="section-title">
+            My <span>Projects</span>
+        </h2>
+
+        <div class="project-list">
+
+            <div class="project-card">
+                <h3>Personal Portfolio</h3>
+                <p>
+                    Website portfolio pribadi menggunakan HTML,
+                    CSS, dan GitHub Pages.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Warnet TINET</h3>
+                <p>
+                    Proyek latihan pengembangan website
+                    untuk usaha warnet.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Learning Projects</h3>
+                <p>
+                    Berbagai latihan pemrograman dan
+                    Software Engineering.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section" id="contact">
+
+        <h2 class="section-title">
+            Contact <span>Me</span>
+        </h2>
+
+        <div class="contact-content">
+
+            <p>Terima kasih sudah mengunjungi portfolio saya.</p>
+
+            <p>
+                Silakan hubungi saya untuk berdiskusi
+                atau berkolaborasi.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            &copy; 2026 DimasDev. Created by Dimas Alifianto.
         </p>
 
-        <div class="hero-buttons">
-            <a href="#projects" class="btn-primary">My Projects</a>
-            <a href="#about" class="btn-secondary">About Me</a>
-        </div>
-    </div>
-</section>
-    <h1>Halo, saya Dimas!</h1>
-    <h2>Selamat datang di website saya</h2>
+    </footer>
 
-    <p>Saya sedang belajar Software Engineering
-    dan Web Development.</p>
-
-    <h3>Keahlian Saya</h3>
-    <ul>
-        <li>HTML dan CSS</li>
-        <li>Administrasi dan Data Entry</li>
-        <li>Pengoperasian Komputer</li>
-    </ul>
-
-    <p>Ini adalah proyek website pertama saya!</p>
 </body>
 </html>
