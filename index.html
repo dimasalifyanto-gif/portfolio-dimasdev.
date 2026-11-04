@@ -620,6 +620,139 @@
             opacity: 1;
             transform: translateX(0);
         }
+        
+/* =================================
+   BLACK MATRIX + NEON GREEN THEME
+================================= */
+
+/* Background lebih elegan */
+body {
+    background-color: #020804;
+    background-image:
+        radial-gradient(
+            ellipse at 15% 20%,
+            rgba(0, 255, 100, 0.12),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 85% 75%,
+            rgba(0, 180, 70, 0.10),
+            transparent 38%
+        ),
+        linear-gradient(
+            rgba(0, 255, 100, 0.055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 255, 100, 0.055) 1px,
+            transparent 1px
+        );
+}
+
+/* Cahaya hijau */
+body::before {
+    opacity: 0.75;
+}
+
+/* Navbar */
+header {
+    border-bottom-color: rgba(0, 255, 102, 0.3);
+}
+
+.logo span,
+.nav-menu a:hover {
+    color: #00ff66;
+}
+
+.nav-menu a:hover {
+    text-shadow: 0 0 5px #00ff66, 0 0 15px #00ff66;
+}
+
+/* Hero */
+.welcome,
+.hero h1 span {
+    color: #00ff66;
+}
+
+.hero h1 span {
+    text-shadow: 0 0 15px rgba(0, 255, 102, 0.35);
+}
+
+/* Tombol */
+.btn-primary {
+    background-color: #00ff66;
+    color: #020804;
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.25);
+}
+
+.btn-secondary {
+    border-color: #00ff66;
+}
+
+.btn:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.4);
+}
+
+/* Foto profil */
+.hero-image {
+    border-color: #00ff66;
+    box-shadow:
+        0 0 20px rgba(0, 255, 102, 0.4),
+        0 0 55px rgba(0, 255, 102, 0.18);
+}
+
+/* Judul setiap bagian */
+.section-title span {
+    color: #00ff66;
+}
+
+/* Kartu pengalaman */
+.experience-card,
+.education-card,
+.training-card {
+    border-left-color: #00ff66;
+}
+
+.experience-card:hover,
+.education-card:hover,
+.training-card:hover {
+    border-color: #00ff66;
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.15);
+}
+
+.experience-header h3,
+.experience-date,
+.education-card h3,
+.training-card h3 {
+    color: #00ff66;
+}
+
+/* Skills */
+.skill-card:hover {
+    border-color: #00ff66;
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.15);
+}
+
+.skill-card h3 {
+    color: #00ff66;
+}
+
+/* Projects */
+.project-card:hover {
+    border-color: #00ff66;
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.15);
+}
+
+.project-card h3 {
+    color: #00ff66;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid rgba(0, 255, 102, 0.2);
+}
+
     </style>
 </head>
 
