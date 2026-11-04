@@ -15,42 +15,85 @@
             scroll-behavior: smooth;
         }
 
-        /* BACKGROUND CYBER */
-        body {
-            position: relative;
-            overflow-x: hidden;
-            background-color: #050816;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-image:
-                linear-gradient(rgba(56,189,248,0.06) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(56,189,248,0.06) 1px, transparent 1px);
-            background-size: 40px 40px;
-            background-attachment: fixed;
-        }
+       
+/* BACKGROUND CYBER DEVELOPER */
+body {
+    position: relative;
+    overflow-x: hidden;
+    background-color: #020617;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 
-        body::before {
-            content: "";
-            position: fixed;
-            inset: -30%;
-            background:
-                radial-gradient(circle at 25% 35%, rgba(0,200,255,0.16), transparent 28%),
-                radial-gradient(circle at 75% 65%, rgba(0,100,255,0.13), transparent 30%);
-            animation: neonMove 14s ease-in-out infinite alternate;
-            pointer-events: none;
-            z-index: 0;
-        }
+    background-image:
+        radial-gradient(
+            ellipse at 15% 20%,
+            rgba(0, 100, 255, 0.20),
+            transparent 35%
+        ),
+        radial-gradient(
+            ellipse at 85% 75%,
+            rgba(0, 200, 255, 0.13),
+            transparent 35%
+        ),
+        linear-gradient(
+            rgba(56,189,248,0.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(56,189,248,0.045) 1px,
+            transparent 1px
+        );
 
-        body > * {
-            position: relative;
-            z-index: 1;
-        }
+    background-size:
+        auto,
+        auto,
+        35px 35px,
+        35px 35px;
 
-        @keyframes neonMove {
-            from { transform: translate3d(-1%, -1%, 0) scale(1); }
-            to { transform: translate3d(3%, 2%, 0) scale(1.05); }
-        }
+    background-attachment: fixed;
+}
+
+/* CAHAYA NEON BERGERAK */
+body::before {
+    content: "";
+    position: fixed;
+    inset: -50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 40%,
+            rgba(0, 140, 255, 0.13),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 70% 60%,
+            rgba(0, 220, 255, 0.10),
+            transparent 25%
+        );
+
+    animation: neonMove 15s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* MENJAGA KONTEN TETAP DI ATAS BACKGROUND */
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ANIMASI CAHAYA */
+@keyframes neonMove {
+    from {
+        transform: translate3d(-1%, -1%, 0) scale(1);
+    }
+
+    to {
+        transform: translate3d(3%, 2%, 0) scale(1.05);
+    }
+}
 
         /* NAVBAR */
         header {
