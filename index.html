@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -15,137 +14,90 @@
             scroll-behavior: smooth;
         }
 
-       
+        /* BACKGROUND MATRIX CYBER HITAM + NEON HIJAU */
+        body {
+            position: relative;
+            overflow-x: hidden;
+            background-color: #010501;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
 
-/* BACKGROUND MATRIX CYBER */
-body {
-    position: relative;
-    overflow-x: hidden;
-    background-color: #020804;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+            background-image:
+                radial-gradient(
+                    ellipse at 15% 20%,
+                    rgba(0, 255, 80, 0.24),
+                    transparent 38%
+                ),
+                radial-gradient(
+                    ellipse at 85% 75%,
+                    rgba(0, 200, 60, 0.20),
+                    transparent 38%
+                ),
+                linear-gradient(
+                    rgba(0, 255, 80, 0.09) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(0, 255, 80, 0.09) 1px,
+                    transparent 1px
+                );
 
-    background-image:
-        radial-gradient(
-            ellipse at 15% 20%,
-            rgba(0, 255, 100, 0.18),
-            transparent 35%
-        ),
-        radial-gradient(
-            ellipse at 85% 75%,
-            rgba(0, 180, 70, 0.15),
-            transparent 35%
-        ),
-        linear-gradient(
-            rgba(0, 255, 100, 0.055) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(0, 255, 100, 0.055) 1px,
-            transparent 1px
-        );
+            background-size:
+                auto,
+                auto,
+                35px 35px,
+                35px 35px;
 
-    background-size:
-        auto,
-        auto,
-        35px 35px,
-        35px 35px;
+            background-attachment: fixed;
+        }
 
-    background-attachment: fixed;
-}
+        /* CAHAYA NEON HIJAU BERGERAK */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: -50%;
+            background:
+                radial-gradient(
+                    circle at 30% 40%,
+                    rgba(0, 255, 70, 0.22),
+                    transparent 27%
+                ),
+                radial-gradient(
+                    circle at 70% 60%,
+                    rgba(0, 180, 50, 0.18),
+                    transparent 30%
+                );
+            animation: neonMove 15s ease-in-out infinite alternate;
+            pointer-events: none;
+            z-index: 0;
+        }
 
-/* CAHAYA HIJAU BERGERAK */
-body::before {
-    content: "";
-    position: fixed;
-    inset: -50%;
+        /* KONTEN DI ATAS BACKGROUND */
+        body > * {
+            position: relative;
+            z-index: 1;
+        }
 
-    background:
-        radial-gradient(
-            circle at 30% 40%,
-            rgba(0, 255, 90, 0.16),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 70% 60%,
-            rgba(0, 180, 60, 0.13),
-            transparent 28%
-        );
-
-    animation: neonMove 15s ease-in-out infinite alternate;
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* KONTEN DI ATAS BACKGROUND */
-body > * {
-    position: relative;
-    z-index: 1;
-}
-
-/* ANIMASI CAHAYA */
-@keyframes neonMove {
-    from {
-        transform: translate3d(-1%, -1%, 0) scale(1);
-    }
-
-    to {
-        transform: translate3d(3%, 2%, 0) scale(1.05);
-    }
-}
-
-
-/* CAHAYA NEON BERGERAK */
-body::before {
-    content: "";
-    position: fixed;
-    inset: -50%;
-
-    background:
-        radial-gradient(
-            circle at 30% 40%,
-            rgba(0, 140, 255, 0.13),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 70% 60%,
-            rgba(0, 220, 255, 0.10),
-            transparent 25%
-        );
-
-    animation: neonMove 15s ease-in-out infinite alternate;
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* MENJAGA KONTEN TETAP DI ATAS BACKGROUND */
-body > * {
-    position: relative;
-    z-index: 1;
-}
-
-/* ANIMASI CAHAYA */
-@keyframes neonMove {
-    from {
-        transform: translate3d(-1%, -1%, 0) scale(1);
-    }
-
-    to {
-        transform: translate3d(3%, 2%, 0) scale(1.05);
-    }
-}
+        @keyframes neonMove {
+            from {
+                transform: translate3d(-1%, -1%, 0) scale(1);
+            }
+            to {
+                transform: translate3d(3%, 2%, 0) scale(1.05);
+            }
+        }
 
         /* NAVBAR */
         header {
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(2, 8, 4, 0.90);
             backdrop-filter: blur(10px);
             padding: 15px 8%;
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid rgba(56,189,248,0.2);
+            border-bottom: 1px solid rgba(0, 255, 80, 0.25);
         }
 
         .navbar {
@@ -316,7 +268,7 @@ body > * {
 
         /* ABOUT */
         .about {
-            background: rgba(15,23,42,0.88);
+            background: rgba(2, 8, 4, 0.72);
         }
 
         .about-content {
@@ -328,15 +280,15 @@ body > * {
 
         /* EXPERIENCE */
         .experience {
-            background: rgba(5,8,22,0.78);
+            background: rgba(0, 5, 2, 0.68);
         }
 
         .experience-card {
             max-width: 900px;
             margin: auto;
             padding: 30px;
-            background: #1e293b;
-            border: 1px solid #334155;
+            background: rgba(5, 18, 9, 0.92);
+            border: 1px solid #24452c;
             border-left: 4px solid #38bdf8;
             border-radius: 12px;
             transition: 0.3s;
@@ -367,7 +319,7 @@ body > * {
         }
 
         .experience-date {
-            background: #0f172a;
+            background: #07140a;
             color: #38bdf8;
             padding: 7px 15px;
             border-radius: 20px;
@@ -395,15 +347,15 @@ body > * {
 
         /* EDUCATION */
         .education {
-            background: rgba(15,23,42,0.88);
+            background: rgba(2, 8, 4, 0.72);
         }
 
         .education-card {
             max-width: 900px;
             margin: auto;
             padding: 30px;
-            background: #0f172a;
-            border: 1px solid #334155;
+            background: rgba(5, 18, 9, 0.92);
+            border: 1px solid #24452c;
             border-left: 4px solid #38bdf8;
             border-radius: 12px;
             transition: 0.3s;
@@ -432,15 +384,15 @@ body > * {
 
         /* TRAINING */
         .training {
-            background: rgba(5,8,22,0.78);
+            background: rgba(0, 5, 2, 0.68);
         }
 
         .training-card {
             max-width: 900px;
             margin: auto;
             padding: 30px;
-            background: #1e293b;
-            border: 1px solid #334155;
+            background: rgba(5, 18, 9, 0.92);
+            border: 1px solid #24452c;
             border-left: 4px solid #38bdf8;
             border-radius: 12px;
             transition: 0.3s;
@@ -470,9 +422,9 @@ body > * {
         }
 
         .skill-card {
-            background: #1e293b;
+            background: rgba(5, 18, 9, 0.92);
             padding: 25px;
-            border: 1px solid #334155;
+            border: 1px solid #24452c;
             border-radius: 12px;
             text-align: center;
             transition: 0.3s;
@@ -491,7 +443,7 @@ body > * {
 
         /* PROJECTS */
         .projects {
-            background: rgba(15,23,42,0.88);
+            background: rgba(2, 8, 4, 0.72);
         }
 
         .project-list {
@@ -501,10 +453,10 @@ body > * {
         }
 
         .project-card {
-            background: #0f172a;
+            background: rgba(5, 18, 9, 0.92);
             padding: 25px;
             border-radius: 12px;
-            border: 1px solid #334155;
+            border: 1px solid #24452c;
             transition: 0.3s;
         }
 
@@ -531,10 +483,11 @@ body > * {
 
         /* FOOTER */
         footer {
-            background: #020617;
+            background: rgba(0, 5, 2, 0.95);
             padding: 25px;
             text-align: center;
             color: #94a3b8;
+            border-top: 1px solid rgba(0, 255, 80, 0.2);
         }
 
         /* TABLET */
@@ -624,7 +577,7 @@ body > * {
             }
         }
 
-        /* PENGATURAN ANIMASI UNTUK PENGGUNA YANG MEMATIKAN GERAK */
+        /* PENGATURAN ANIMASI */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
@@ -635,40 +588,38 @@ body > * {
         }
 
         /* ANIMASI SAAT SCROLL */
-.reveal {
-    opacity: 0;
-    transform: translateY(45px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
+        .reveal {
+            opacity: 0;
+            transform: translateY(45px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-/* Animasi muncul dari kiri */
-.reveal-left {
-    opacity: 0;
-    transform: translateX(-45px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-45px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
 
-.reveal-left.active {
-    opacity: 1;
-    transform: translateX(0);
-}
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
 
-/* Animasi muncul dari kanan */
-.reveal-right {
-    opacity: 0;
-    transform: translateX(45px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(45px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
 
-.reveal-right.active {
-    opacity: 1;
-    transform: translateX(0);
-}
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
     </style>
 </head>
 
@@ -741,7 +692,7 @@ body > * {
     </section>
 
     <!-- EXPERIENCE SECTION -->
-   <section class="section experience reveal-left" id="experience">
+    <section class="section experience reveal-left" id="experience">
         <h2 class="section-title">Work <span>Experience</span></h2>
 
         <div class="experience-card">
@@ -881,22 +832,25 @@ body > * {
     <footer>
         <p>&copy; 2026 DimasDev. Created by Dimas Alifianto.</p>
     </footer>
-<script>
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-        }
-    });
-}, {
-    threshold: 0.15
-});
 
-document.querySelectorAll(
-    ".reveal, .reveal-left, .reveal-right"
-).forEach((element) => {
-    observer.observe(element);
-});
-</script>
+    <!-- ANIMASI SCROLL -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll(
+            ".reveal, .reveal-left, .reveal-right"
+        ).forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+
 </body>
 </html>
