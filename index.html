@@ -139,6 +139,7 @@
 
         /* HERO SECTION */
         
+/* HERO BACKGROUND - LAPTOP & MOBILE */
 .hero {
     min-height: calc(100vh - 78px);
     display: flex;
@@ -147,24 +148,37 @@
 
     background-image:
         linear-gradient(
-            rgba(0, 0, 0, 0.35),
-            rgba(0, 0, 0, 0.55)
+            90deg,
+            rgba(0, 0, 0, 0.78) 0%,
+            rgba(0, 0, 0, 0.48) 55%,
+            rgba(0, 0, 0, 0.25) 100%
         ),
         url("Spanduk%20Futuristik%20Rekayasa%20Perangkat%20Lunak.png");
 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: relative;
 }
-        /* HERO RESPONSIVE - MOBILE */
+
+/* LAPTOP */
+@media (min-width: 769px) {
+    .hero {
+        min-height: calc(100vh - 78px);
+        background-position: center;
+    }
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
     .hero {
         min-height: 100vh;
+        padding: 110px 7% 70px;
+        background-position: 65% center;
         background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        padding: 100px 6% 60px;
+    }
+
+    .hero-content {
+        max-width: 100%;
     }
 }
         .hero-container {
