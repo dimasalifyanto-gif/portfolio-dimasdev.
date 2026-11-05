@@ -862,10 +862,170 @@ footer {
     }
 }
 
+        
+/* CYBER SCANNER LOADING SCREEN */
+#loader {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background: #030704;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#loader.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.scanner-content {
+    text-align: center;
+}
+
+.scanner {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 255, 102, 0.3);
+    box-shadow: 0 0 25px rgba(0, 255, 102, 0.12);
+}
+
+.scanner-ring {
+    position: absolute;
+    inset: 8px;
+    border: 2px solid transparent;
+    border-top-color: #00ff66;
+    border-right-color: #00ff66;
+    border-radius: 50%;
+    animation: scannerRotate 1.5s linear infinite;
+}
+
+.scanner-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #00ff66;
+    box-shadow: 0 0 12px #00ff66;
+    animation: scannerPulse 1.5s ease-in-out infinite;
+}
+
+.scanner-center {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: rgba(0, 255, 102, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00ff66;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 0 0 12px #00ff66;
+}
+
+.scanner-content h2 {
+    color: #ffffff;
+    font-size: 27px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.scanner-content h2 span {
+    color: #00ff66;
+}
+
+.scanner-status {
+    color: #00ff66;
+    font-size: 12px;
+    letter-spacing: 3px;
+    animation: statusBlink 1s infinite;
+}
+
+.scanner-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.scanner-dots span {
+    width: 7px;
+    height: 7px;
+    background: #00ff66;
+    border-radius: 50%;
+    animation: dotPulse 1s infinite alternate;
+}
+
+.scanner-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.scanner-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes scannerRotate {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes scannerPulse {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}
+
+@keyframes statusBlink {
+    50% { opacity: 0.4; }
+}
+
+@keyframes dotPulse {
+    from { opacity: 0.2; transform: scale(0.7); }
+    to { opacity: 1; transform: scale(1.2); }
+}
+
+
     </style>
 </head>
 
 <body>
+
+    
+<!-- CYBER SCANNER LOADING SCREEN -->
+<div id="loader">
+    <div class="scanner-content">
+
+        <div class="scanner">
+            <div class="scanner-ring"></div>
+            <div class="scanner-line"></div>
+
+            <div class="scanner-center">
+                <span>D</span>
+            </div>
+        </div>
+
+        <h2>D'LyfianDev<span>.</span></h2>
+
+        <p class="scanner-status">
+            SCANNING SYSTEM...
+        </p>
+
+        <div class="scanner-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+</div>
+
 
     <!-- NAVBAR -->
     <header>
@@ -1201,6 +1361,17 @@ footer {
 
     typeEffect();
 </script>
-    
+
+<script>
+// CYBER SCANNER LOADING
+window.addEventListener("load", function () {
+    const loader = document.getElementById("loader");
+
+    setTimeout(function () {
+        loader.classList.add("loader-hidden");
+    }, 1800);
+});
+</script>
+  
 </body>
 </html>
