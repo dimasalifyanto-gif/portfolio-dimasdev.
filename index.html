@@ -991,6 +991,44 @@ footer {
     to { opacity: 1; transform: scale(1.2); }
 }
 
+    
+/* SCROLL REVEAL ANIMATION */
+.reveal {
+    opacity: 0;
+    transform: translateY(45px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* STAGGER ANIMATION FOR SKILL CARDS */
+.icon-skill-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.active .icon-skill-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal.active .icon-skill-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.reveal.active .icon-skill-card:nth-child(2) {
+    transition-delay: 0.25s;
+}
+
+.reveal.active .icon-skill-card:nth-child(3) {
+    transition-delay: 0.4s;
+}
 
     </style>
 </head>
@@ -1372,6 +1410,26 @@ window.addEventListener("load", function () {
     }, 1800);
 });
 </script>
-  
+
+    
+<script>
+// SCROLL REVEAL ANIMATION
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+revealElements.forEach((element) => {
+    revealObserver.observe(element);
+});
+</script>
+
 </body>
 </html>
