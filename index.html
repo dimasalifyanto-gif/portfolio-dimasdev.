@@ -776,6 +776,90 @@ footer {
     border-top: 1px solid rgba(0, 255, 102, 0.2);
 }
 
+/* ICON SKILLS CARDS */
+.icon-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.icon-skill-card {
+    background: linear-gradient(145deg, #101a14, #080d0a);
+    border: 1px solid rgba(0, 255, 102, 0.2);
+    border-radius: 18px;
+    padding: 30px 25px;
+    transition: 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-skill-card:hover {
+    transform: translateY(-8px);
+    border-color: #00ff66;
+    box-shadow: 0 0 25px rgba(0, 255, 102, 0.15);
+}
+
+.skill-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    border-radius: 15px;
+    background: rgba(0, 255, 102, 0.1);
+    border: 1px solid rgba(0, 255, 102, 0.3);
+    margin-bottom: 22px;
+}
+
+.icon-skill-card h3 {
+    color: #00ff66;
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.icon-skill-card p {
+    color: #a7b5aa;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.icon-skill-card .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.icon-skill-card .skill-tags span {
+    color: #c8d8cc;
+    background: rgba(0, 255, 102, 0.07);
+    border: 1px solid rgba(0, 255, 102, 0.16);
+    padding: 7px 11px;
+    border-radius: 7px;
+    font-size: 11px;
+    transition: 0.25s ease;
+}
+
+.icon-skill-card .skill-tags span:hover {
+    color: #00ff66;
+    border-color: #00ff66;
+    background: rgba(0, 255, 102, 0.12);
+}
+
+@media (max-width: 900px) {
+    .icon-skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .icon-skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
     </style>
 </head>
 
@@ -879,6 +963,36 @@ footer {
                 <li>Membantu pengelolaan stok perlengkapan operasional.</li>
             </ul>
         </div>
+
+        
+<div class="experience-card">
+    <div class="experience-header">
+        <div>
+            <h3>Teknisi Support (Network Engineer)</h3>
+            <h4>PT XLSMART</h4>
+        </div>
+
+        <span class="experience-date">2025 - 2026</span>
+    </div>
+
+    <p class="experience-description">
+        Bertanggung jawab dalam mendukung pemeliharaan,
+        pemeriksaan, dan penanganan kendala jaringan
+        untuk membantu menjaga konektivitas serta
+        kelancaran operasional jaringan.
+    </p>
+
+    <h4 class="responsibility-title">Tanggung Jawab:</h4>
+
+    <ul class="responsibility-list">
+        <li>Melakukan instalasi dan pemeriksaan jaringan.</li>
+        <li>Memeriksa koneksi internet dan konektivitas jaringan.</li>
+        <li>Melakukan troubleshooting terhadap gangguan jaringan.</li>
+        <li>Melakukan pemeliharaan perangkat jaringan.</li>
+        <li>Membantu memastikan jaringan berfungsi dengan baik.</li>
+    </ul>
+</div>
+
     </section>
 
     <!-- EDUCATION SECTION -->
@@ -914,32 +1028,68 @@ footer {
         </div>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section class="section reveal" id="skills">
-        <h2 class="section-title">My <span>Skills</span></h2>
 
-        <div class="skills-list">
-            <div class="skill-card">
-                <h3>HTML & CSS</h3>
-                <p>Dasar pembuatan dan desain website.</p>
-            </div>
 
-            <div class="skill-card">
-                <h3>Microsoft Office</h3>
-                <p>Microsoft Word, Excel dasar, dan PowerPoint.</p>
-            </div>
+<!-- SKILLS SECTION -->
+<section class="section reveal" id="skills">
+    <h2 class="section-title">Technical <span>Skills</span></h2>
 
-            <div class="skill-card">
-                <h3>Data Entry</h3>
-                <p>Pengolahan dan penginputan data.</p>
-            </div>
+    <div class="icon-skills-grid">
 
-            <div class="skill-card">
-                <h3>Computer Operation</h3>
-                <p>Pengoperasian komputer dan pengelolaan file.</p>
+        <!-- CARD 1 -->
+        <div class="icon-skill-card">
+            <div class="skill-icon">💻</div>
+            <h3>Computer & Hardware</h3>
+            <p>
+                Kemampuan dalam pengoperasian komputer,
+                pengelolaan perangkat, dan pemecahan masalah dasar.
+            </p>
+            <div class="skill-tags">
+                <span>Computer Operation</span>
+                <span>Hardware Basics</span>
+                <span>Software Installation</span>
+                <span>File Management</span>
+                <span>Basic Troubleshooting</span>
             </div>
         </div>
-    </section>
+
+        <!-- CARD 2 -->
+        <div class="icon-skill-card">
+            <div class="skill-icon">🌐</div>
+            <h3>Networking & Technical Support</h3>
+            <p>
+                Pengetahuan dasar jaringan komputer,
+                konektivitas internet, dan dukungan teknis.
+            </p>
+            <div class="skill-tags">
+                <span>Network Fundamentals</span>
+                <span>IP Addressing Basics</span>
+                <span>Network Troubleshooting</span>
+                <span>LAN Fundamentals</span>
+                <span>Technical Support</span>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="icon-skill-card">
+            <div class="skill-icon">⌨️</div>
+            <h3>Programming & Development</h3>
+            <p>
+                Kemampuan dasar dalam pemrograman
+                dan pengembangan website.
+            </p>
+            <div class="skill-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Python Basics</span>
+                <span>Web Development</span>
+                <span>GitHub Pages</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 
     <!-- PROJECTS SECTION -->
     <section class="section projects reveal-left" id="projects">
