@@ -1,6 +1,6 @@
-# Portfolio DimasDev
+# Portfolio D'LyfianDev
 
-Halo! Saya Dimas Alifianto.
+Halo! Saya Dimas Alifian.
 
 Saya sedang belajar Software Engineering, Web Development, dan pengelolaan proyek menggunakan GitHub.
 
