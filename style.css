@@ -932,3 +932,15 @@ footer p {
 .reveal.active .icon-skill-card:nth-child(3) {
     transition-delay: 0.4s;
 }
+/* PROJECTS BERJAJAR KE SAMPING */
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+@media (max-width: 700px) {
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+}
