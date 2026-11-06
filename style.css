@@ -944,3 +944,41 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
+/* CONTACT INFO */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.contact-item {
+    background: #1e293b;
+    border: 1px solid #38bdf8;
+    border-radius: 12px;
+    padding: 25px;
+    min-width: 250px;
+    transition: 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #38bdf8;
+}
+
+.contact-item h3 {
+    color: #38bdf8;
+    margin-bottom: 12px;
+}
+
+.contact-item a {
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-item a:hover {
+    color: #38bdf8;
+}
