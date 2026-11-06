@@ -1,3 +1,4 @@
+
 /* RESET DASAR */
 * {
     margin: 0;
@@ -517,10 +518,11 @@ header {
     max-width: 750px;
     margin: auto;
     padding: 35px;
-    background: rgba(8, 20, 12, 0.85);
-    border: 1px solid rgba(0, 255, 102, 0.2);
+    background: transparent;
+    border: 1px solid rgba(0, 255, 102, 0.25);
     border-radius: 15px;
     text-align: center;
+    box-shadow: none;
 }
 
 .contact-content p {
@@ -529,6 +531,47 @@ header {
     margin-bottom: 20px;
 }
 
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.contact-item {
+    background: transparent !important;
+    border: 1px solid rgba(0, 255, 102, 0.4);
+    border-radius: 12px;
+    padding: 25px;
+    min-width: 250px;
+    transition: 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    border-color: #00ff66;
+    box-shadow: 0 0 18px rgba(0, 255, 102, 0.25);
+}
+
+.contact-item h3 {
+    color: #00ff66;
+    margin-bottom: 12px;
+}
+
+.contact-item a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+    overflow-wrap: anywhere;
+}
+
+.contact-item a:hover {
+    color: #00ff66;
+    text-shadow: 0 0 8px rgba(0, 255, 102, 0.5);
+}
+
+/* CONTACT LINKS */
 .contact-links {
     display: flex;
     justify-content: center;
@@ -668,6 +711,11 @@ footer p {
 
     .experience-header {
         flex-direction: column;
+    }
+
+    .contact-item {
+        width: 100%;
+        min-width: 0;
     }
 }
 
@@ -932,6 +980,7 @@ footer p {
 .reveal.active .icon-skill-card:nth-child(3) {
     transition-delay: 0.4s;
 }
+
 /* PROJECTS BERJAJAR KE SAMPING */
 .project-list {
     display: grid;
@@ -943,44 +992,4 @@ footer p {
     .project-list {
         grid-template-columns: 1fr;
     }
-}
-
-/* CONTACT INFO */
-.contact-info {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin-top: 35px;
-}
-
-
-.contact-item {
-    background: #0f172a;
-    border: 1px solid #38bdf8;
-    border-radius: 12px;
-    padding: 25px;
-    min-width: 250px;
-    transition: 0.3s ease;
-}
-
-
-.contact-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px #38bdf8;
-}
-
-.contact-item h3 {
-    color: #38bdf8;
-    margin-bottom: 12px;
-}
-
-.contact-item a {
-    color: #e2e8f0;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.contact-item a:hover {
-    color: #38bdf8;
 }
