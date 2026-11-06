@@ -954,14 +954,16 @@ footer p {
     margin-top: 35px;
 }
 
+
 .contact-item {
-    background: #1e293b;
+    background: #0f172a;
     border: 1px solid #38bdf8;
     border-radius: 12px;
     padding: 25px;
     min-width: 250px;
     transition: 0.3s ease;
 }
+
 
 .contact-item:hover {
     transform: translateY(-5px);
