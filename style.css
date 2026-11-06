@@ -513,16 +513,17 @@ header {
     line-height: 1.8;
 }
 
+
 /* CONTACT SECTION */
 .contact-content {
     max-width: 750px;
     margin: auto;
     padding: 35px;
-    background: transparent;
-    border: 1px solid rgba(0, 255, 102, 0.25);
+    background: rgba(1, 5, 1, 0.90);
+    border: 1px solid rgba(0, 255, 102, 0.35);
     border-radius: 15px;
     text-align: center;
-    box-shadow: none;
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.08);
 }
 
 .contact-content p {
@@ -540,18 +541,19 @@ header {
 }
 
 .contact-item {
-    background: transparent !important;
-    border: 1px solid rgba(0, 255, 102, 0.4);
+    background: linear-gradient(145deg, #07140b, #010501) !important;
+    border: 1px solid rgba(0, 255, 102, 0.45);
     border-radius: 12px;
     padding: 25px;
     min-width: 250px;
     transition: 0.3s ease;
+    box-shadow: 0 0 12px rgba(0, 255, 102, 0.08);
 }
 
 .contact-item:hover {
     transform: translateY(-5px);
     border-color: #00ff66;
-    box-shadow: 0 0 18px rgba(0, 255, 102, 0.25);
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.3);
 }
 
 .contact-item h3 {
@@ -570,6 +572,7 @@ header {
     color: #00ff66;
     text-shadow: 0 0 8px rgba(0, 255, 102, 0.5);
 }
+
 
 /* CONTACT LINKS */
 .contact-links {
