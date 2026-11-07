@@ -1025,56 +1025,42 @@ footer p {
         gap: 20px;
     }
 }
-/* CYBER PREMIUM LOGO */
+/* LOGO TYPING ANIMATION */
 .logo {
-    position: relative;
-    display: inline-block;
-    color: #00ff66;
+    display: inline-flex;
     font-size: 28px;
     font-weight: 900;
-    letter-spacing: 1.5px;
-    text-decoration: none;
-    text-shadow: 0 0 12px rgba(0, 255, 102, 0.5);
-    transition: 0.3s ease;
+    white-space: nowrap;
 }
 
-/* HURUF D PUTIH */
-.logo::first-letter {
+.logo-d {
     color: #ffffff;
     text-shadow: 0 0 12px #ffffff;
 }
 
-/* GARIS CAHAYA */
-.logo::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -7px;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #00ff66,
-        #ffffff,
-        #00ff66,
-        transparent
-    );
-    background-size: 200% 100%;
-    animation: lightMove 3s linear infinite;
-    box-shadow: 0 0 10px #00ff66;
+.logo-rest {
+    display: inline-block;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #00ff66;
+    border-right: 2px solid #00ff66;
+    text-shadow: 0 0 12px #00ff66;
+    animation: typing 3s steps(10) infinite alternate,
+               cursorBlink 0.7s infinite;
 }
 
-.logo:hover {
-    letter-spacing: 3px;
-    text-shadow: 0 0 20px #00ff66;
-}
-
-@keyframes lightMove {
+@keyframes typing {
     from {
-        background-position: 200% 0;
+        width: 0;
     }
     to {
-        background-position: -200% 0;
+        width: 10ch;
+    }
+}
+
+@keyframes cursorBlink {
+    50% {
+        border-color: transparent;
     }
 }
