@@ -429,6 +429,7 @@ header {
     border-radius: 12px;
     padding: 30px;
     transition: 0.35s ease;
+    margin-bottom: 20px;
 }
 
 .training-card:hover {
