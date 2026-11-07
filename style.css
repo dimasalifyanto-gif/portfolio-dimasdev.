@@ -1025,40 +1025,56 @@ footer p {
         gap: 20px;
     }
 }
-/* LOGO D'LYFIANDEV */
+/* CYBER PREMIUM LOGO */
 .logo {
-    font-weight: 800;
+    position: relative;
+    display: inline-block;
     color: #00ff66;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
     text-decoration: none;
-    letter-spacing: 1px;
-
-    text-shadow:
-        0 0 8px rgba(0, 255, 102, 0.6),
-        0 0 20px rgba(0, 255, 102, 0.3);
-
-    animation: logoGlow 3s ease-in-out infinite alternate;
+    text-shadow: 0 0 12px rgba(0, 255, 102, 0.5);
+    transition: 0.3s ease;
 }
 
-/* HURUF D BERWARNA PUTIH */
+/* HURUF D PUTIH */
 .logo::first-letter {
     color: #ffffff;
-    text-shadow:
-        0 0 8px #ffffff,
-        0 0 18px rgba(255, 255, 255, 0.7);
+    text-shadow: 0 0 12px #ffffff;
 }
 
-/* ANIMASI CAHAYA */
-@keyframes logoGlow {
-    from {
-        text-shadow:
-            0 0 5px rgba(0, 255, 102, 0.4),
-            0 0 12px rgba(0, 255, 102, 0.2);
-    }
+/* GARIS CAHAYA */
+.logo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #00ff66,
+        #ffffff,
+        #00ff66,
+        transparent
+    );
+    background-size: 200% 100%;
+    animation: lightMove 3s linear infinite;
+    box-shadow: 0 0 10px #00ff66;
+}
 
+.logo:hover {
+    letter-spacing: 3px;
+    text-shadow: 0 0 20px #00ff66;
+}
+
+@keyframes lightMove {
+    from {
+        background-position: 200% 0;
+    }
     to {
-        text-shadow:
-            0 0 10px #00ff66,
-            0 0 25px rgba(0, 255, 102, 0.6),
-            0 0 40px rgba(0, 255, 102, 0.3);
+        background-position: -200% 0;
     }
 }
