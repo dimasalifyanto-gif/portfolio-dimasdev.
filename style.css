@@ -1025,3 +1025,34 @@ footer p {
         gap: 20px;
     }
 }
+/* ANIMASI D'LYFIANDEV */
+.logo {
+    color: #00ff66;
+    text-shadow:
+        0 0 5px #00ff66,
+        0 0 10px #00ff66,
+        0 0 20px #00ff66,
+        0 0 40px #00ff66;
+
+    animation: neonPulse 2s ease-in-out infinite alternate;
+}
+
+/* EFEK NEON BERKEDIP */
+@keyframes neonPulse {
+    from {
+        text-shadow:
+            0 0 5px #00ff66,
+            0 0 10px #00ff66,
+            0 0 20px #00ff66;
+        opacity: 0.8;
+    }
+
+    to {
+        text-shadow:
+            0 0 10px #00ff66,
+            0 0 20px #00ff66,
+            0 0 40px #00ff66,
+            0 0 60px #00ff66;
+        opacity: 1;
+    }
+}
