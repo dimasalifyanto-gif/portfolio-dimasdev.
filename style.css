@@ -1192,3 +1192,27 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+/* CERTIFICATES & TRAINING BACKGROUND */
+.certificates {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(0, 255, 102, 0.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(0, 255, 102, 0.08),
+            transparent 35%
+        ),
+        linear-gradient(145deg, #07130c, #010501);
+
+    border: 1px solid rgba(0, 255, 102, 0.25);
+    border-radius: 20px;
+    padding: 50px 35px;
+    box-shadow:
+        0 0 20px rgba(0, 255, 102, 0.08),
+        inset 0 0 30px rgba(0, 255, 102, 0.03);
+}
