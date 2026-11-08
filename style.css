@@ -1243,31 +1243,73 @@ footer p {
     z-index: -1;
 }
 
-/* BACKGROUND MASING-MASING KARTU */
-.certificate-card:nth-child(1) {
-    background-image: url("software .jpg");
+/* TRAINING CARD BACKGROUND */
+.training-card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid rgba(0, 255, 102, 0.5);
+    border-radius: 15px;
+    padding: 25px;
+    min-height: 230px;
+    transition: 0.35s ease;
 }
 
-.certificate-card:nth-child(2) {
+/* DARK OVERLAY */
+.training-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 5, 2, 0.45),
+        rgba(0, 5, 2, 0.92)
+    );
+    z-index: -1;
+}
+
+/* CAPITAL MARKET SCHOOL */
+.training-card:nth-child(1) {
+    background-image: url("Capital%20Market%20School.jpg");
+}
+
+/* SOFTWARE ENGINEERING */
+.training-card:nth-child(2) {
+    background-image: url("software%20.jpg");
+}
+
+/* WEB DEVELOPMENT */
+.training-card:nth-child(3) {
+    background-image: linear-gradient(145deg, #10251a, #020804);
+}
+
+/* COMPUTER NETWORKING */
+.training-card:nth-child(4) {
+    background-image: url("Computer%20Networking.jpg");
+}
+
+/* MICROSOFT OFFICE */
+.training-card:nth-child(5) {
     background-image: url("images.jpg");
 }
 
-.certificate-card:nth-child(3) {
-    background-image: url("Computer Networking.jpg");
-}
-
-.certificate-card:nth-child(4) {
-    background-image: url("Capital Market School.jpg");
-}
-
-/* TEKS KARTU */
-.certificate-info {
-    position: relative;
-    z-index: 1;
-}
-
-.certificate-info h3,
-.certificate-info p,
-.certificate-info span {
+/* TEXT STYLE */
+.training-card h3 {
+    color: #00ff66;
     text-shadow: 0 2px 8px #000;
+}
+
+.training-card p,
+.training-card strong {
+    color: #fff;
+    text-shadow: 0 2px 6px #000;
+}
+
+.training-card:hover {
+    transform: translateY(-7px);
+    border-color: #00ff66;
+    box-shadow: 0 0 25px rgba(0, 255, 102, 0.3);
 }
