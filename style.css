@@ -1112,3 +1112,9 @@ footer p {
             0 0 45px rgba(0, 255, 102, 0.8);
     }
 }
+.experience-header h3 i {
+    color: #00ff66;
+    margin-right: 10px;
+    font-size: 20px;
+    text-shadow: 0 0 10px #00ff66;
+}
