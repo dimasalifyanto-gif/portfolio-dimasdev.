@@ -1359,3 +1359,36 @@ footer p {
     background-image: url("Programming%20%26%20Development.png");
 }
 }
+
+/* WORK EXPERIENCE BACKGROUND */
+.experience-card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* DARK OVERLAY */
+.experience-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 5, 2, 0.45),
+        rgba(0, 5, 2, 0.92)
+    );
+    z-index: -1;
+}
+
+/* ADMIN / OPERATOR */
+.experience-card:nth-child(1) {
+    background-image: url("admin%20operator.png");
+}
+
+/* NETWORK TECHNICIAN */
+.experience-card:nth-child(2) {
+    background-image: url("Network%20Technician.png");
+}
