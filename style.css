@@ -1360,18 +1360,40 @@ footer p {
 }
 }
 
-/* ADMIN / OPERATOR */
-#experience .admin-card {
-    background-image: url("./admin%20operator.png") !important;
+
+/* =================================
+   WORK EXPERIENCE BACKGROUND
+================================= */
+
+/* BASE EXPERIENCE CARD */
+#experience .experience-card {
+    position: relative;
+    overflow: hidden;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    isolation: isolate;
+}
+
+/* DARK OVERLAY */
+#experience .experience-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 5, 2, 0.45),
+        rgba(0, 5, 2, 0.92)
+    );
+    z-index: -1;
+}
+
+/* ADMIN / OPERATOR */
+#experience .experience-card.admin-card {
+    background-image: url("./admin%20operator.png") !important;
 }
 
 /* NETWORK TECHNICIAN */
-#experience > .experience-card:nth-of-type(2) {
-    background-image: url("Network%20Technician.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+#experience .experience-card.network-card {
+    background-image: url("./Network%20Technician.png") !important;
 }
