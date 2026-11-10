@@ -1360,13 +1360,16 @@ footer p {
 }
 }
 
-/* ADMIN / OPERATOR */
-#experience > .experience-card:nth-of-type(1) {
-    background-image: url("admin%20operator.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+<!-- ADMIN / OPERATOR -->
+<div class="experience-card admin-card">
+    <div class="experience-header">
+        <div>
+            <h3>
+                <i class="fas fa-desktop"></i>
+                Admin / Operator
+            </h3>
+            <h4>TI.NET</h4>
+        </div>
 
 /* NETWORK TECHNICIAN */
 #experience > .experience-card:nth-of-type(2) {
