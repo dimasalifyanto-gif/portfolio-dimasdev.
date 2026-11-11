@@ -1886,3 +1886,53 @@ footer p {
         animation: none;
     }
 }
+
+
+/* =====================================
+   D'LYFIANDEV - HOVER SWING FIX
+===================================== */
+
+/* POSISI TITIK GANTUNG */
+#home .idcard-container {
+    transform-origin: 50% 0%;
+    cursor: pointer;
+}
+
+/* ANIMASI AYUNAN */
+@keyframes dlyfianSwingFix {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(-10deg);
+    }
+
+    40% {
+        transform: rotate(10deg);
+    }
+
+    60% {
+        transform: rotate(-8deg);
+    }
+
+    80% {
+        transform: rotate(6deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* AKTIF SAAT KURSOR MENYENTUH */
+#home .idcard-container:hover {
+    animation: dlyfianSwingFix 1.5s ease-in-out infinite !important;
+}
+
+/* CAHAYA NEON SAAT DISENTUH */
+#home .idcard-container:hover .idcard {
+    box-shadow:
+        0 0 25px rgba(0, 255, 102, 0.7),
+        0 0 50px rgba(0, 255, 102, 0.3);
+}
