@@ -1953,3 +1953,83 @@ footer p {
     80%      { transform: rotate(4deg); }
 }
 
+
+/* =====================================
+   DOUBLE SILVER METALLIC CHAINS
+===================================== */
+
+/* AREA DUA RANTAI */
+#home .idcard-lanyard {
+    width: 68px !important;
+    height: 120px !important;
+    flex: 0 0 120px !important;
+
+    position: relative !important;
+    display: block !important;
+
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+}
+
+/* RANTAI KIRI DAN KANAN */
+#home .idcard-lanyard::before,
+#home .idcard-lanyard::after {
+    content: "";
+    position: absolute;
+    top: 0;
+
+    width: 16px;
+    height: 120px;
+
+    background:
+        radial-gradient(
+            ellipse 6px 9px at center,
+            transparent 36%,
+            #475569 41%,
+            #cbd5e1 49%,
+            #ffffff 55%,
+            #94a3b8 65%,
+            #475569 72%,
+            transparent 78%
+        );
+
+    background-size: 16px 21px;
+    background-repeat: repeat-y;
+    background-position: center top;
+
+    filter:
+        drop-shadow(0 0 2px #94a3b8)
+        drop-shadow(0 0 3px rgba(255,255,255,0.3));
+}
+
+/* RANTAI KIRI */
+#home .idcard-lanyard::before {
+    left: 9px;
+}
+
+/* RANTAI KANAN */
+#home .idcard-lanyard::after {
+    right: 9px;
+}
+
+/* HILANGKAN TULISAN TALI LAMA */
+#home .idcard-lanyard span {
+    display: none !important;
+}
+
+/* PENGAIT DI ATAS KARTU */
+#home .idcard-clip {
+    width: 54px !important;
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #64748b,
+        #e2e8f0,
+        #475569
+    ) !important;
+
+    border: 3px solid #cbd5e1 !important;
+    border-radius: 6px;
+}
