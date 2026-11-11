@@ -1936,3 +1936,18 @@ footer p {
         0 0 25px rgba(0, 255, 102, 0.7),
         0 0 50px rgba(0, 255, 102, 0.3);
 }
+
+
+/* ID CARD SWING ON MOUSE ENTER */
+#home .idcard-container.idcard-swing {
+    animation: dlyfianMouseSwing 1.4s ease-in-out;
+    transform-origin: top center;
+}
+
+@keyframes dlyfianMouseSwing {
+    0%, 100% { transform: rotate(0deg); }
+    20%      { transform: rotate(-10deg); }
+    40%      { transform: rotate(9deg); }
+    60%      { transform: rotate(-6deg); }
+    80%      { transform: rotate(4deg); }
+}
