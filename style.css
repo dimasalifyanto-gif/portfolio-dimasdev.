@@ -1716,44 +1716,51 @@ footer p {
     font-size: 10px;
 }
 
-/* ==========================================
-   HOVER SWING ANIMATION
-========================================== */
 
+/* =====================================
+   ID CARD - MOUSE HOVER SWING
+===================================== */
+
+/* TITIK PUTAR DI UJUNG RANTAI */
+#home .idcard-container {
+    transform-origin: 50% 0%;
+}
+
+/* ANIMASI AYUNAN */
 @keyframes idcardChainSwing {
     0%, 100% {
         transform: rotate(0deg);
     }
 
     20% {
-        transform: rotate(-7deg);
+        transform: rotate(-12deg);
     }
 
     40% {
-        transform: rotate(6deg);
+        transform: rotate(12deg);
     }
 
     60% {
-        transform: rotate(-5deg);
+        transform: rotate(-9deg);
     }
 
     80% {
-        transform: rotate(4deg);
+        transform: rotate(7deg);
     }
 }
 
-/* MOVE WHEN CURSOR TOUCHES */
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-    #home .idcard-container:hover {
-        animation: idcardChainSwing 1.8s ease-in-out infinite;
-    }
-
-    #home .idcard-container:hover .idcard {
-        box-shadow:
-            0 0 25px rgba(0,255,102,.5),
-            0 0 45px rgba(0,255,102,.2);
-    }
+/* AKTIF SAAT KURSOR MENYENTUH ID CARD */
+#home .idcard-container:hover {
+    animation: idcardChainSwing 1.3s ease-in-out infinite !important;
 }
+
+/* EFEK CAHAYA */
+#home .idcard-container:hover .idcard {
+    box-shadow:
+        0 0 25px rgba(0, 255, 102, 0.6),
+        0 0 45px rgba(0, 255, 102, 0.3);
+}
+
 
 /* TABLET & MOBILE */
 @media (max-width: 800px) {
