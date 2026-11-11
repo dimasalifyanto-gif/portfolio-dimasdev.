@@ -1482,16 +1482,17 @@ footer p {
 
 
 
+
 /* ==========================================
-   D'LYFIANDEV - HANGING ID CARD
-   METALLIC CHAIN EDITION
+   D'LYFIANDEV - ID CARD
+   CLEAN DOUBLE CHAIN EDITION
 ========================================== */
 
-/* ID CARD CONTAINER */
+/* CONTAINER */
 #home .idcard-container {
     width: 290px;
-    max-width: 290px;
     min-width: 290px;
+    max-width: 290px;
     flex: 0 0 290px;
     margin: 0 auto;
     display: flex;
@@ -1503,60 +1504,67 @@ footer p {
 }
 
 /* ==========================================
-   SILVER METALLIC CHAIN
+   TWO SILVER CHAINS
 ========================================== */
 
 #home .idcard-lanyard {
-    width: 54px !important;
-    height: 120px !important;
-    flex: 0 0 120px !important;
-
+    width: 68px;
+    height: 120px;
+    flex: 0 0 120px;
     position: relative;
-    display: block !important;
-
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    overflow: visible;
+    display: block;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
-/* OVAL CHAIN LINKS */
-#home .idcard-lanyard::before {
+/* BOTH CHAIN TRACKS */
+#home .idcard-lanyard::before,
+#home .idcard-lanyard::after {
     content: "";
     position: absolute;
-    width: 22px;
-    height: 120px;
-    left: 16px;
     top: 0;
+    width: 14px;
+    height: 120px;
 
-    background:
+    background-image:
         radial-gradient(
-            ellipse 7px 10px at center,
-            transparent 38%,
-            #475569 42%,
-            #e2e8f0 49%,
-            #ffffff 55%,
-            #94a3b8 63%,
-            #475569 70%,
-            transparent 76%
+            ellipse 5px 8px,
+            transparent 43%,
+            #64748b 47%,
+            #ffffff 53%,
+            #cbd5e1 65%,
+            #475569 73%,
+            transparent 80%
         );
 
-    background-size: 22px 23px;
+    background-size: 14px 21px;
     background-repeat: repeat-y;
     background-position: center top;
 
-    filter: drop-shadow(0 0 2px rgba(203, 213, 225, 0.7));
+    filter: drop-shadow(0 0 3px #94a3b8);
 }
 
-/* REMOVE OLD LANYARD TEXT */
+/* LEFT CHAIN */
+#home .idcard-lanyard::before {
+    left: 8px;
+}
+
+/* RIGHT CHAIN */
+#home .idcard-lanyard::after {
+    right: 8px;
+}
+
+/* REMOVE OLD TEXT */
 #home .idcard-lanyard span {
-    display: none !important;
+    display: none;
 }
 
 /* METAL CLIP */
 #home .idcard-clip {
-    width: 45px;
+    width: 54px;
     height: 27px;
+    flex: 0 0 27px;
 
     background: linear-gradient(
         135deg,
@@ -1568,11 +1576,9 @@ footer p {
 
     border: 3px solid #cbd5e1;
     border-radius: 6px;
-
     position: relative;
     z-index: 2;
-
-    box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+    box-shadow: 0 3px 8px rgba(0,0,0,.5);
 }
 
 /* ==========================================
@@ -1580,7 +1586,6 @@ footer p {
 ========================================== */
 
 #home .idcard {
-    display: block;
     width: 100%;
     box-sizing: border-box;
     padding: 22px 18px;
@@ -1601,8 +1606,7 @@ footer p {
     text-align: center;
     position: relative;
     overflow: hidden;
-
-    transition: .4s ease;
+    transition: box-shadow .4s ease;
 }
 
 /* BRAND */
@@ -1619,7 +1623,6 @@ footer p {
     color: #00ff66;
     font-size: 25px;
     font-weight: 900;
-
     text-shadow: 0 0 10px #00ff66;
 }
 
@@ -1635,22 +1638,20 @@ footer p {
     letter-spacing: 2px;
 }
 
-/* PHOTO FRAME */
+/* PHOTO */
 #home .idcard-photo {
     display: block;
-    width: 145px !important;
-    height: 165px !important;
-    max-width: 145px !important;
+    width: 145px;
+    height: 165px;
+    max-width: 145px;
 
     margin: 20px auto 15px;
     padding: 5px;
-
     box-sizing: border-box;
 
     border: 2px solid #00ff66;
     border-radius: 12px;
     overflow: hidden;
-
     background: #050b07;
 
     box-shadow: 0 0 15px rgba(0,255,102,.3);
@@ -1658,17 +1659,13 @@ footer p {
 
 #home .idcard-photo img {
     display: block;
-    width: 100% !important;
-    height: 100% !important;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    margin: 0;
 
-    max-width: 100% !important;
-    max-height: 100% !important;
-
-    margin: 0 !important;
-
-    object-fit: cover !important;
+    object-fit: cover;
     object-position: center 35%;
-
     border-radius: 7px;
 }
 
@@ -1690,7 +1687,6 @@ footer p {
 
     border: 1px solid #00ff66;
     border-radius: 20px;
-
     background: rgba(0,255,102,.08);
 }
 
@@ -1706,201 +1702,19 @@ footer p {
 #home .idcard-footer {
     display: flex;
     justify-content: space-between;
-
     border-top: 1px solid rgba(0,255,102,.4);
-
     padding-top: 12px;
     margin-top: 20px;
-
     color: #00ff66;
     font-size: 10px;
 }
 
+/* ==========================================
+   HOVER ANIMATION
+========================================== */
 
-/* =====================================
-   ID CARD - MOUSE HOVER SWING
-===================================== */
-
-/* TITIK PUTAR DI UJUNG RANTAI */
-#home .idcard-container {
-    transform-origin: 50% 0%;
-}
-
-/* ANIMASI AYUNAN */
-@keyframes idcardChainSwing {
+@keyframes dlyfianMouseSwing {
     0%, 100% {
-        transform: rotate(0deg);
-    }
-
-    20% {
-        transform: rotate(-12deg);
-    }
-
-    40% {
-        transform: rotate(12deg);
-    }
-
-    60% {
-        transform: rotate(-9deg);
-    }
-
-    80% {
-        transform: rotate(7deg);
-    }
-}
-
-/* AKTIF SAAT KURSOR MENYENTUH ID CARD */
-#home .idcard-container:hover {
-    animation: idcardChainSwing 1.3s ease-in-out infinite !important;
-}
-
-/* EFEK CAHAYA */
-#home .idcard-container:hover .idcard {
-    box-shadow:
-        0 0 25px rgba(0, 255, 102, 0.6),
-        0 0 45px rgba(0, 255, 102, 0.3);
-}
-
-
-/* TABLET & MOBILE */
-@media (max-width: 800px) {
-    #home .hero-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 35px;
-    }
-
-    #home .idcard-container {
-        flex: 0 0 auto;
-        width: 270px;
-        min-width: 270px;
-        margin: 20px auto;
-    }
-
-    #home .hero-content {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-
-
-
-/* =====================================
-   ID CARD - CHAIN & HOVER SWING
-===================================== */
-
-/* RANTAI BESI */
-#home .idcard-container .idcard-lanyard {
-    width: 54px;
-    height: 120px;
-    position: relative;
-    flex: 0 0 120px;
-    display: block;
-    background: none;
-    border: none;
-    box-shadow: none;
-}
-
-/* POLA LINK RANTAI */
-#home .idcard-container .idcard-lanyard::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(
-            ellipse 7px 11px,
-            transparent 47%,
-            #374151 51%,
-            #e5e7eb 59%,
-            #94a3b8 68%,
-            #475569 75%,
-            transparent 80%
-        );
-
-    background-size: 20px 25px;
-    background-position: center;
-    background-repeat: repeat-y;
-
-    filter: drop-shadow(0 0 3px rgba(0,255,102,0.3));
-}
-
-/* HILANGKAN TULISAN PADA TALI LAMA */
-#home .idcard-container .idcard-lanyard span {
-    display: none;
-}
-
-/* PENGAIT LOGAM */
-#home .idcard-container .idcard-clip {
-    border: 3px solid #d1d5db;
-    background: linear-gradient(
-        135deg,
-        #f8fafc,
-        #64748b,
-        #e5e7eb,
-        #334155
-    );
-    box-shadow: 0 3px 8px rgba(0,0,0,0.5);
-}
-
-/* TITIK PUTAR RANTAI */
-#home .idcard-container {
-    transform-origin: top center;
-}
-
-/* BERGERAK SAAT KURSOR MENYENTUH */
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-
-    #home .idcard-container:hover {
-        animation: chainCardSwing 1.8s ease-in-out infinite;
-    }
-
-}
-
-/* ANIMASI AYUNAN */
-@keyframes chainCardSwing {
-    0%, 100% {
-        transform: rotate(0deg);
-    }
-
-    20% {
-        transform: rotate(-7deg);
-    }
-
-    40% {
-        transform: rotate(6deg);
-    }
-
-    60% {
-        transform: rotate(-5deg);
-    }
-
-    80% {
-        transform: rotate(4deg);
-    }
-}
-
-/* GERAKAN DI NONAKTIFKAN JIKA DIMINTA SISTEM */
-@media (prefers-reduced-motion: reduce) {
-    #home .idcard-container:hover {
-        animation: none;
-    }
-}
-
-
-/* =====================================
-   D'LYFIANDEV - HOVER SWING FIX
-===================================== */
-
-/* POSISI TITIK GANTUNG */
-#home .idcard-container {
-    transform-origin: 50% 0%;
-    cursor: pointer;
-}
-
-/* ANIMASI AYUNAN */
-@keyframes dlyfianSwingFix {
-    0% {
         transform: rotate(0deg);
     }
 
@@ -1909,198 +1723,57 @@ footer p {
     }
 
     40% {
-        transform: rotate(10deg);
+        transform: rotate(9deg);
     }
 
     60% {
-        transform: rotate(-8deg);
+        transform: rotate(-6deg);
     }
 
     80% {
-        transform: rotate(6deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
+        transform: rotate(4deg);
     }
 }
 
-/* AKTIF SAAT KURSOR MENYENTUH */
-#home .idcard-container:hover {
-    animation: dlyfianSwingFix 1.5s ease-in-out infinite !important;
-}
-
-/* CAHAYA NEON SAAT DISENTUH */
-#home .idcard-container:hover .idcard {
-    box-shadow:
-        0 0 25px rgba(0, 255, 102, 0.7),
-        0 0 50px rgba(0, 255, 102, 0.3);
-}
-
-
-
-/* ID CARD SWING ON MOUSE ENTER */
+/* ACTIVATED BY EXISTING JAVASCRIPT */
 #home .idcard-container.idcard-swing {
     animation: dlyfianMouseSwing 1.4s ease-in-out;
-    transform-origin: top center;
 }
 
-@keyframes dlyfianMouseSwing {
-    0%, 100% { transform: rotate(0deg); }
-    20%      { transform: rotate(-10deg); }
-    40%      { transform: rotate(9deg); }
-    60%      { transform: rotate(-6deg); }
-    80%      { transform: rotate(4deg); }
+#home .idcard-container.idcard-swing .idcard {
+    box-shadow:
+        0 0 25px rgba(0,255,102,.6),
+        0 0 45px rgba(0,255,102,.3);
 }
 
-
-/* =====================================
-   DOUBLE SILVER METALLIC CHAINS
-===================================== */
-
-/* AREA DUA RANTAI */
-#home .idcard-lanyard {
-    width: 68px !important;
-    height: 120px !important;
-    flex: 0 0 120px !important;
-
-    position: relative !important;
-    display: block !important;
-
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    overflow: visible !important;
+/* TABLET */
+@media (max-width: 900px) {
+    #home .idcard-container {
+        width: 270px;
+        min-width: 270px;
+        max-width: 270px;
+        flex-basis: 270px;
+    }
 }
 
-/* RANTAI KIRI DAN KANAN */
-#home .idcard-lanyard::before,
-#home .idcard-lanyard::after {
-    content: "";
-    position: absolute;
-    top: 0;
+/* MOBILE */
+@media (max-width: 800px) {
+    #home .hero-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+    }
 
-    width: 16px;
-    height: 120px;
+    #home .idcard-container {
+        width: 270px;
+        min-width: 270px;
+        max-width: 270px;
+        flex-basis: auto;
+        margin: 20px auto;
+    }
 
-    background:
-        radial-gradient(
-            ellipse 6px 9px at center,
-            transparent 36%,
-            #475569 41%,
-            #cbd5e1 49%,
-            #ffffff 55%,
-            #94a3b8 65%,
-            #475569 72%,
-            transparent 78%
-        );
-
-    background-size: 16px 21px;
-    background-repeat: repeat-y;
-    background-position: center top;
-
-    filter:
-        drop-shadow(0 0 2px #94a3b8)
-        drop-shadow(0 0 3px rgba(255,255,255,0.3));
-}
-
-/* RANTAI KIRI */
-#home .idcard-lanyard::before {
-    left: 9px;
-}
-
-/* RANTAI KANAN */
-#home .idcard-lanyard::after {
-    right: 9px;
-}
-
-/* HILANGKAN TULISAN TALI LAMA */
-#home .idcard-lanyard span {
-    display: none !important;
-}
-
-/* PENGAIT DI ATAS KARTU */
-#home .idcard-clip {
-    width: 54px !important;
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #64748b,
-        #e2e8f0,
-        #475569
-    ) !important;
-
-    border: 3px solid #cbd5e1 !important;
-    border-radius: 6px;
-}
-
-/* =====================================
-   DOUBLE CHAIN - CLEAR VISIBLE VERSION
-===================================== */
-
-#home .idcard-lanyard {
-    position: relative !important;
-    width: 68px !important;
-    height: 120px !important;
-    flex: 0 0 120px !important;
-    display: block !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-/* DUA RANTAI TERPISAH */
-#home .idcard-lanyard::before,
-#home .idcard-lanyard::after {
-    content: "" !important;
-    display: block !important;
-    position: absolute !important;
-    top: 0 !important;
-
-    width: 14px !important;
-    height: 120px !important;
-
-    background-image: radial-gradient(
-        ellipse 5px 8px at center,
-        transparent 38%,
-        #475569 43%,
-        #f8fafc 51%,
-        #94a3b8 62%,
-        #e2e8f0 70%,
-        #475569 76%,
-        transparent 82%
-    ) !important;
-
-    background-size: 14px 21px !important;
-    background-repeat: repeat-y !important;
-    background-position: center top !important;
-
-    filter: drop-shadow(0 0 3px #cbd5e1);
-}
-
-/* RANTAI KIRI */
-#home .idcard-lanyard::before {
-    left: 7px !important;
-}
-
-/* RANTAI KANAN */
-#home .idcard-lanyard::after {
-    right: 7px !important;
-}
-
-/* MATIKAN TULISAN TALI */
-#home .idcard-lanyard span {
-    display: none !important;
-}
-
-/* PENGAIT LOGAM */
-#home .idcard-clip {
-    width: 54px !important;
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #64748b,
-        #e2e8f0,
-        #475569
-    ) !important;
+    #home .hero-content {
+        width: 100%;
+        text-align: center;
+    }
 }
