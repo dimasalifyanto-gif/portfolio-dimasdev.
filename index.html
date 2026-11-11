@@ -617,5 +617,27 @@ revealElements.forEach((element) => {
 });
 </script>
 
+                
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const idCard = document.querySelector("#home .idcard-container");
+
+    if (!idCard) return;
+
+    idCard.addEventListener("mouseenter", function () {
+        idCard.classList.remove("idcard-swing");
+
+        // Memulai ulang animasi setiap kali kursor masuk
+        void idCard.offsetWidth;
+
+        idCard.classList.add("idcard-swing");
+    });
+
+    idCard.addEventListener("animationend", function () {
+        idCard.classList.remove("idcard-swing");
+    });
+});
+</script>
+
 </body>
 </html>
