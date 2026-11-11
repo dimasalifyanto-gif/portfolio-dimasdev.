@@ -1678,39 +1678,104 @@ footer p {
 }
 
 
+
 /* =====================================
-   ID CARD - CONTINUOUS SWING ANIMATION
+   ID CARD - CHAIN & HOVER SWING
 ===================================== */
 
-#home .idcard-container {
-    transform-origin: top center;
-    animation: idcardSwing 3s ease-in-out infinite !important;
-    will-change: transform;
+/* RANTAI BESI */
+#home .idcard-container .idcard-lanyard {
+    width: 54px;
+    height: 120px;
+    position: relative;
+    flex: 0 0 120px;
+    display: block;
+    background: none;
+    border: none;
+    box-shadow: none;
 }
 
-/* GERAKAN AYUNAN */
-@keyframes idcardSwing {
-    0% {
+/* POLA LINK RANTAI */
+#home .idcard-container .idcard-lanyard::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            ellipse 7px 11px,
+            transparent 47%,
+            #374151 51%,
+            #e5e7eb 59%,
+            #94a3b8 68%,
+            #475569 75%,
+            transparent 80%
+        );
+
+    background-size: 20px 25px;
+    background-position: center;
+    background-repeat: repeat-y;
+
+    filter: drop-shadow(0 0 3px rgba(0,255,102,0.3));
+}
+
+/* HILANGKAN TULISAN PADA TALI LAMA */
+#home .idcard-container .idcard-lanyard span {
+    display: none;
+}
+
+/* PENGAIT LOGAM */
+#home .idcard-container .idcard-clip {
+    border: 3px solid #d1d5db;
+    background: linear-gradient(
+        135deg,
+        #f8fafc,
+        #64748b,
+        #e5e7eb,
+        #334155
+    );
+    box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+}
+
+/* TITIK PUTAR RANTAI */
+#home .idcard-container {
+    transform-origin: top center;
+}
+
+/* BERGERAK SAAT KURSOR MENYENTUH */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+
+    #home .idcard-container:hover {
+        animation: chainCardSwing 1.8s ease-in-out infinite;
+    }
+
+}
+
+/* ANIMASI AYUNAN */
+@keyframes chainCardSwing {
+    0%, 100% {
         transform: rotate(0deg);
     }
 
     20% {
-        transform: rotate(-6deg);
+        transform: rotate(-7deg);
     }
 
     40% {
-        transform: rotate(5deg);
+        transform: rotate(6deg);
     }
 
     60% {
-        transform: rotate(-4deg);
+        transform: rotate(-5deg);
     }
 
     80% {
-        transform: rotate(3deg);
+        transform: rotate(4deg);
     }
+}
 
-    100% {
-        transform: rotate(0deg);
+/* GERAKAN DI NONAKTIFKAN JIKA DIMINTA SISTEM */
+@media (prefers-reduced-motion: reduce) {
+    #home .idcard-container:hover {
+        animation: none;
     }
 }
