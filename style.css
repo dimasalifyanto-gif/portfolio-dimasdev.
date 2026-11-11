@@ -1481,8 +1481,10 @@ footer p {
 }
 
 
+
 /* ==========================================
    D'LYFIANDEV - HANGING ID CARD
+   METALLIC CHAIN EDITION
 ========================================== */
 
 /* ID CARD CONTAINER */
@@ -1497,63 +1499,109 @@ footer p {
     align-items: center;
     position: relative;
     box-sizing: border-box;
+    transform-origin: top center;
 }
 
-/* LANYARD */
+/* ==========================================
+   SILVER METALLIC CHAIN
+========================================== */
+
 #home .idcard-lanyard {
-    width: 70px;
-    height: 120px;
-    background: linear-gradient(
-        90deg,
-        #020804,
-        #087a35,
-        #00ff66,
-        #087a35,
-        #020804
-    );
-    border-left: 2px solid #00ff66;
-    border-right: 2px solid #00ff66;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 15px rgba(0,255,102,.4);
+    width: 54px !important;
+    height: 120px !important;
+    flex: 0 0 120px !important;
+
+    position: relative;
+    display: block !important;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible;
 }
 
+/* OVAL CHAIN LINKS */
+#home .idcard-lanyard::before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 120px;
+    left: 16px;
+    top: 0;
+
+    background:
+        radial-gradient(
+            ellipse 7px 10px at center,
+            transparent 38%,
+            #475569 42%,
+            #e2e8f0 49%,
+            #ffffff 55%,
+            #94a3b8 63%,
+            #475569 70%,
+            transparent 76%
+        );
+
+    background-size: 22px 23px;
+    background-repeat: repeat-y;
+    background-position: center top;
+
+    filter: drop-shadow(0 0 2px rgba(203, 213, 225, 0.7));
+}
+
+/* REMOVE OLD LANYARD TEXT */
 #home .idcard-lanyard span {
-    color: white;
-    font-size: 10px;
-    font-weight: bold;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    letter-spacing: 2px;
+    display: none !important;
 }
 
 /* METAL CLIP */
 #home .idcard-clip {
     width: 45px;
     height: 27px;
-    background: linear-gradient(135deg,#eee,#555);
-    border: 3px solid #aab3ae;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #64748b,
+        #e2e8f0,
+        #475569
+    );
+
+    border: 3px solid #cbd5e1;
     border-radius: 6px;
+
     position: relative;
     z-index: 2;
+
+    box-shadow: 0 3px 8px rgba(0,0,0,0.5);
 }
 
-/* ID CARD BODY */
+/* ==========================================
+   ID CARD BODY
+========================================== */
+
 #home .idcard {
     display: block;
     width: 100%;
     box-sizing: border-box;
     padding: 22px 18px;
-    background: linear-gradient(145deg,#101a14,#010501);
+
+    background: linear-gradient(
+        145deg,
+        #101a14,
+        #010501
+    );
+
     border: 2px solid #00ff66;
     border-radius: 16px;
+
     box-shadow:
         0 0 15px rgba(0,255,102,.3),
         0 0 35px rgba(0,255,102,.12);
+
     text-align: center;
     position: relative;
     overflow: hidden;
+
     transition: .4s ease;
 }
 
@@ -1564,11 +1612,14 @@ footer p {
     height: 40px;
     align-items: center;
     justify-content: center;
+
     border: 2px solid #00ff66;
     border-radius: 10px;
+
     color: #00ff66;
     font-size: 25px;
     font-weight: 900;
+
     text-shadow: 0 0 10px #00ff66;
 }
 
@@ -1590,13 +1641,18 @@ footer p {
     width: 145px !important;
     height: 165px !important;
     max-width: 145px !important;
+
     margin: 20px auto 15px;
     padding: 5px;
+
     box-sizing: border-box;
+
     border: 2px solid #00ff66;
     border-radius: 12px;
     overflow: hidden;
+
     background: #050b07;
+
     box-shadow: 0 0 15px rgba(0,255,102,.3);
 }
 
@@ -1604,11 +1660,15 @@ footer p {
     display: block;
     width: 100% !important;
     height: 100% !important;
+
     max-width: 100% !important;
     max-height: 100% !important;
+
     margin: 0 !important;
+
     object-fit: cover !important;
     object-position: center 35%;
+
     border-radius: 7px;
 }
 
@@ -1623,11 +1683,14 @@ footer p {
 #home .idcard-role {
     display: inline-block;
     padding: 7px 14px;
+
     color: #00ff66;
     font-size: 11px;
     font-weight: bold;
+
     border: 1px solid #00ff66;
     border-radius: 20px;
+
     background: rgba(0,255,102,.08);
 }
 
@@ -1643,17 +1706,53 @@ footer p {
 #home .idcard-footer {
     display: flex;
     justify-content: space-between;
+
     border-top: 1px solid rgba(0,255,102,.4);
+
     padding-top: 12px;
     margin-top: 20px;
+
     color: #00ff66;
     font-size: 10px;
 }
 
-/* HOVER */
-#home .idcard-container:hover .idcard {
-    transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(0,255,102,.45);
+/* ==========================================
+   HOVER SWING ANIMATION
+========================================== */
+
+@keyframes idcardChainSwing {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(-7deg);
+    }
+
+    40% {
+        transform: rotate(6deg);
+    }
+
+    60% {
+        transform: rotate(-5deg);
+    }
+
+    80% {
+        transform: rotate(4deg);
+    }
+}
+
+/* MOVE WHEN CURSOR TOUCHES */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    #home .idcard-container:hover {
+        animation: idcardChainSwing 1.8s ease-in-out infinite;
+    }
+
+    #home .idcard-container:hover .idcard {
+        box-shadow:
+            0 0 25px rgba(0,255,102,.5),
+            0 0 45px rgba(0,255,102,.2);
+    }
 }
 
 /* TABLET & MOBILE */
@@ -1676,6 +1775,7 @@ footer p {
         text-align: center;
     }
 }
+
 
 
 
