@@ -1480,28 +1480,17 @@ footer p {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
 }
 
-/* =====================================
+
+/* ==========================================
    D'LYFIANDEV - HANGING ID CARD
-===================================== */
-
-/* HERO LAYOUT */
-#home .hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 45px;
-}
-
-#home .hero-content {
-    flex: 1;
-    min-width: 0;
-}
+========================================== */
 
 /* ID CARD CONTAINER */
 #home .idcard-container {
-    flex: 0 0 290px;
     width: 290px;
-    max-width: 100%;
+    max-width: 290px;
+    min-width: 290px;
+    flex: 0 0 290px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -1512,21 +1501,22 @@ footer p {
 
 /* LANYARD */
 #home .idcard-lanyard {
-    width: 65px;
-    height: 115px;
+    width: 70px;
+    height: 120px;
     background: linear-gradient(
         90deg,
-        #071a0e,
+        #020804,
+        #087a35,
         #00ff66,
-        #071a0e
+        #087a35,
+        #020804
     );
-    border-left: 3px solid #00ff66;
-    border-right: 3px solid #00ff66;
+    border-left: 2px solid #00ff66;
+    border-right: 2px solid #00ff66;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 15px rgba(0,255,102,.4);
-    box-sizing: border-box;
 }
 
 #home .idcard-lanyard span {
@@ -1541,19 +1531,20 @@ footer p {
 /* METAL CLIP */
 #home .idcard-clip {
     width: 45px;
-    height: 25px;
-    border: 4px solid #aab3ae;
-    border-radius: 5px;
+    height: 27px;
     background: linear-gradient(135deg,#eee,#555);
+    border: 3px solid #aab3ae;
+    border-radius: 6px;
     position: relative;
     z-index: 2;
 }
 
 /* ID CARD BODY */
 #home .idcard {
+    display: block;
     width: 100%;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 22px 18px;
     background: linear-gradient(145deg,#101a14,#010501);
     border: 2px solid #00ff66;
     border-radius: 16px;
@@ -1563,28 +1554,28 @@ footer p {
     text-align: center;
     position: relative;
     overflow: hidden;
+    transition: .4s ease;
 }
 
 /* BRAND */
 #home .idcard-logo {
     display: inline-flex;
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     align-items: center;
     justify-content: center;
     border: 2px solid #00ff66;
     border-radius: 10px;
     color: #00ff66;
-    font-size: 24px;
+    font-size: 25px;
     font-weight: 900;
-    margin-bottom: 8px;
     text-shadow: 0 0 10px #00ff66;
 }
 
 #home .idcard-brand h3 {
-    color: white;
+    color: #ffffff;
     font-size: 19px;
-    margin: 5px 0;
+    margin: 8px 0 3px;
 }
 
 #home .idcard-brand p {
@@ -1593,7 +1584,7 @@ footer p {
     letter-spacing: 2px;
 }
 
-/* PHOTO - UKURAN DIKUNCI */
+/* PHOTO FRAME */
 #home .idcard-photo {
     display: block;
     width: 145px !important;
@@ -1605,6 +1596,7 @@ footer p {
     border: 2px solid #00ff66;
     border-radius: 12px;
     overflow: hidden;
+    background: #050b07;
     box-shadow: 0 0 15px rgba(0,255,102,.3);
 }
 
@@ -1613,13 +1605,14 @@ footer p {
     width: 100% !important;
     height: 100% !important;
     max-width: 100% !important;
+    max-height: 100% !important;
+    margin: 0 !important;
     object-fit: cover !important;
-    object-position: center;
+    object-position: center 35%;
     border-radius: 7px;
-    margin: 0;
 }
 
-/* IDENTITY */
+/* PERSONAL INFORMATION */
 #home .idcard-info h2 {
     color: white;
     font-size: 19px;
@@ -1629,7 +1622,7 @@ footer p {
 
 #home .idcard-role {
     display: inline-block;
-    padding: 8px 15px;
+    padding: 7px 14px;
     color: #00ff66;
     font-size: 11px;
     font-weight: bold;
@@ -1658,10 +1651,6 @@ footer p {
 }
 
 /* HOVER */
-#home .idcard {
-    transition: .4s ease;
-}
-
 #home .idcard-container:hover .idcard {
     transform: translateY(-5px);
     box-shadow: 0 0 30px rgba(0,255,102,.45);
@@ -1671,11 +1660,14 @@ footer p {
 @media (max-width: 800px) {
     #home .hero-container {
         flex-direction: column;
+        align-items: center;
         gap: 35px;
     }
 
     #home .idcard-container {
-        flex-basis: auto;
+        flex: 0 0 auto;
+        width: 270px;
+        min-width: 270px;
         margin: 20px auto;
     }
 
