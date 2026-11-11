@@ -1474,3 +1474,8 @@ footer p {
     color: #00ff66 !important;
     text-shadow: 0 0 10px #00ff66;
 }
+/* TRAINING TITLE */
+.training-title {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+}
