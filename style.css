@@ -1938,6 +1938,7 @@ footer p {
 }
 
 
+
 /* ID CARD SWING ON MOUSE ENTER */
 #home .idcard-container.idcard-swing {
     animation: dlyfianMouseSwing 1.4s ease-in-out;
@@ -1951,3 +1952,4 @@ footer p {
     60%      { transform: rotate(-6deg); }
     80%      { transform: rotate(4deg); }
 }
+
