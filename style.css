@@ -1709,37 +1709,78 @@ footer p {
     font-size: 10px;
 }
 
+
 /* ==========================================
-   HOVER ANIMATION
+   NATURAL FREE HANGING ANIMATION
 ========================================== */
 
+/* ANIMASI GERAK BEBAS */
 @keyframes dlyfianMouseSwing {
-    0%, 100% {
-        transform: rotate(0deg);
+    0% {
+        transform: perspective(900px)
+            translate3d(0, 0, 0)
+            rotateX(0deg)
+            rotateY(0deg)
+            rotateZ(0deg);
     }
 
-    20% {
-        transform: rotate(-10deg);
+    15% {
+        transform: perspective(900px)
+            translate3d(-6px, -4px, 0)
+            rotateX(-5deg)
+            rotateY(-8deg)
+            rotateZ(-5deg);
     }
 
-    40% {
-        transform: rotate(9deg);
+    32% {
+        transform: perspective(900px)
+            translate3d(7px, 3px, 0)
+            rotateX(6deg)
+            rotateY(7deg)
+            rotateZ(4deg);
     }
 
-    60% {
-        transform: rotate(-6deg);
+    50% {
+        transform: perspective(900px)
+            translate3d(-5px, 5px, 0)
+            rotateX(-6deg)
+            rotateY(4deg)
+            rotateZ(-4deg);
     }
 
-    80% {
-        transform: rotate(4deg);
+    70% {
+        transform: perspective(900px)
+            translate3d(5px, -3px, 0)
+            rotateX(4deg)
+            rotateY(-6deg)
+            rotateZ(4deg);
+    }
+
+    85% {
+        transform: perspective(900px)
+            translate3d(-2px, 2px, 0)
+            rotateX(-2deg)
+            rotateY(3deg)
+            rotateZ(-2deg);
+    }
+
+    100% {
+        transform: perspective(900px)
+            translate3d(0, 0, 0)
+            rotateX(0deg)
+            rotateY(0deg)
+            rotateZ(0deg);
     }
 }
 
-/* ACTIVATED BY EXISTING JAVASCRIPT */
+/* AKTIF DARI JAVASCRIPT */
 #home .idcard-container.idcard-swing {
-    animation: dlyfianMouseSwing 1.4s ease-in-out;
+    transform-origin: top center;
+    animation: dlyfianMouseSwing 1.8s ease-in-out;
+    will-change: transform;
 }
 
+/* EFEK CAHAYA */
 #home .idcard-container.idcard-swing .idcard {
     box-shadow:
         0 0 25px rgba(0,255,102,.6),
