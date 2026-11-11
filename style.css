@@ -2033,3 +2033,74 @@ footer p {
     border: 3px solid #cbd5e1 !important;
     border-radius: 6px;
 }
+
+/* =====================================
+   DOUBLE CHAIN - CLEAR VISIBLE VERSION
+===================================== */
+
+#home .idcard-lanyard {
+    position: relative !important;
+    width: 68px !important;
+    height: 120px !important;
+    flex: 0 0 120px !important;
+    display: block !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* DUA RANTAI TERPISAH */
+#home .idcard-lanyard::before,
+#home .idcard-lanyard::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+
+    width: 14px !important;
+    height: 120px !important;
+
+    background-image: radial-gradient(
+        ellipse 5px 8px at center,
+        transparent 38%,
+        #475569 43%,
+        #f8fafc 51%,
+        #94a3b8 62%,
+        #e2e8f0 70%,
+        #475569 76%,
+        transparent 82%
+    ) !important;
+
+    background-size: 14px 21px !important;
+    background-repeat: repeat-y !important;
+    background-position: center top !important;
+
+    filter: drop-shadow(0 0 3px #cbd5e1);
+}
+
+/* RANTAI KIRI */
+#home .idcard-lanyard::before {
+    left: 7px !important;
+}
+
+/* RANTAI KANAN */
+#home .idcard-lanyard::after {
+    right: 7px !important;
+}
+
+/* MATIKAN TULISAN TALI */
+#home .idcard-lanyard span {
+    display: none !important;
+}
+
+/* PENGAIT LOGAM */
+#home .idcard-clip {
+    width: 54px !important;
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #64748b,
+        #e2e8f0,
+        #475569
+    ) !important;
+}
