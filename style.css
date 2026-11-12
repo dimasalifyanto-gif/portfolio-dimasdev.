@@ -1804,11 +1804,15 @@ footer p {
     background-image:
         linear-gradient(
             90deg,
-            rgba(0,0,0,0.95) 0%,
-            rgba(0,0,0,0.75) 45%,
-            rgba(0,0,0,0.15) 100%
+            rgba(0,0,0,0.92) 0%,
+            rgba(0,0,0,0.65) 45%,
+            rgba(0,0,0,0.10) 100%
         ),
-        url("work-admin.jpg") !important;
+        url("./cover_(1).jpg") !important;
+
+    background-size: 100% 100%, auto 100% !important;
+    background-position: center, right center !important;
+    background-repeat: no-repeat, no-repeat !important;
 }
 
 /* NETWORK TECHNICIAN */
@@ -1816,9 +1820,13 @@ footer p {
     background-image:
         linear-gradient(
             90deg,
-            rgba(0,0,0,0.95) 0%,
-            rgba(0,0,0,0.75) 45%,
-            rgba(0,0,0,0.15) 100%
+            rgba(0,0,0,0.92) 0%,
+            rgba(0,0,0,0.65) 45%,
+            rgba(0,0,0,0.10) 100%
         ),
-        url("work-network.jpeg") !important;
+        url("./WhatsApp%20Image%202026-11-12%20at%2021.15.05.jpeg") !important;
+
+    background-size: 100% 100%, auto 100% !important;
+    background-position: center, right center !important;
+    background-repeat: no-repeat, no-repeat !important;
 }
