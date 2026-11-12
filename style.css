@@ -1798,11 +1798,222 @@ footer p {
     transform-origin: top center;
 }
 
+
 /* =====================================
-   GLOBAL MONOCHROME FILTER
-   BLACK & WHITE WEBSITE
+   D'LYFIANDEV - TRUE MONOCHROME THEME
+   UI ONLY - KEEP PHOTOS COLORFUL
 ===================================== */
 
-html {
-    filter: grayscale(100%) !important;
+/* WEBSITE BACKGROUND */
+body {
+    background-color: #080808 !important;
+    background-image:
+        radial-gradient(
+            ellipse at 15% 20%,
+            rgba(255,255,255,0.07),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 85% 75%,
+            rgba(255,255,255,0.05),
+            transparent 38%
+        ),
+        linear-gradient(
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        ) !important;
+    background-size: auto, auto, 35px 35px, 35px 35px;
+}
+
+/* BACKGROUND GLOW */
+body::before {
+    background:
+        radial-gradient(
+            circle at 30% 40%,
+            rgba(255,255,255,0.08),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 70% 60%,
+            rgba(255,255,255,0.05),
+            transparent 30%
+        ) !important;
+}
+
+/* NAVBAR */
+header {
+    background: rgba(5,5,5,0.95) !important;
+    border-bottom-color: rgba(255,255,255,0.2) !important;
+}
+
+.nav-menu a:hover {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5) !important;
+}
+
+/* LOGO */
+.logo-d,
+.logo-rest,
+.logo span {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3) !important;
+}
+
+/* HERO TEXT */
+.welcome,
+.hero-role,
+.typing-cursor,
+.description span {
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+/* SECTION TITLES */
+.section-title,
+.section-title span,
+.training-title {
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+/* BUTTONS */
+.btn-primary {
+    color: #000000 !important;
+    background: #ffffff !important;
+    border: 1px solid #ffffff !important;
+    box-shadow: 0 0 15px rgba(255,255,255,0.15) !important;
+}
+
+.btn-secondary {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+/* ALL CARD BORDERS */
+.about-content,
+.experience-card,
+.education-card,
+.training-card,
+.icon-skill-card,
+.project-card,
+.contact-content,
+.contact-item,
+.certificate-card {
+    border-color: rgba(255,255,255,0.3) !important;
+}
+
+/* CARD ACCENTS */
+.experience-card,
+.education-card,
+.training-card {
+    border-left-color: #ffffff !important;
+}
+
+.experience-card:hover,
+.education-card:hover,
+.training-card:hover,
+.icon-skill-card:hover,
+.project-card:hover,
+.contact-item:hover {
+    border-color: #ffffff !important;
+    box-shadow: 0 0 20px rgba(255,255,255,0.12) !important;
+}
+
+/* GREEN TEXT TO WHITE */
+.experience-header h3,
+.experience-header h3 i,
+.education-card h3,
+.training-card h3,
+.icon-skill-card h3,
+.project-card h3,
+.contact-item h3,
+.certificate-info h3,
+.certificate-info span {
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+/* SKILL TAGS */
+.skill-icon,
+.skill-tags span {
+    border-color: rgba(255,255,255,0.3) !important;
+}
+
+.skill-tags span {
+    color: #ffffff !important;
+    background: rgba(255,255,255,0.05) !important;
+}
+
+/* CONTACT */
+.contact-item a,
+.contact-content p,
+.contact-links a {
+    color: #ffffff !important;
+}
+
+.contact-links a {
+    border-color: rgba(255,255,255,0.35) !important;
+}
+
+/* ID CARD */
+#home .idcard {
+    border-color: #ffffff !important;
+    box-shadow: 0 0 18px rgba(255,255,255,0.15) !important;
+}
+
+#home .idcard-logo,
+#home .idcard-photo,
+#home .idcard-role {
+    border-color: #ffffff !important;
+}
+
+#home .idcard-logo,
+#home .idcard-brand p,
+#home .idcard-info h2,
+#home .idcard-role,
+#home .idcard-status,
+#home .idcard-footer {
+    color: #ffffff !important;
+}
+
+#home .idcard-footer {
+    border-top-color: rgba(255,255,255,0.35) !important;
+}
+
+/* METALLIC CHAINS */
+#home .idcard-lanyard::before,
+#home .idcard-lanyard::after {
+    filter: drop-shadow(0 0 3px rgba(255,255,255,0.5)) !important;
+}
+
+/* LOADING SCREEN */
+#loader {
+    background: #050505 !important;
+}
+
+.scanner-ring {
+    border-top-color: #ffffff !important;
+    border-right-color: #ffffff !important;
+}
+
+/* FOOTER */
+footer {
+    background: #080808 !important;
+    border-top-color: rgba(255,255,255,0.2) !important;
+}
+
+/* IMAGE PROTECTION:
+   No grayscale filter on photos or images.
+   Original image colors remain unchanged.
+*/
+.hero-image img,
+.idcard-photo img,
+.training-card img,
+.certificate-image img {
+    filter: none !important;
 }
