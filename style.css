@@ -1797,3 +1797,30 @@ footer p {
 #home .idcard-lanyard::after {
     transform-origin: top center;
 }
+
+/* =====================================
+   WORK EXPERIENCE - FULL BACKGROUND
+===================================== */
+
+/* ADMIN / OPERATOR */
+#experience .admin-card {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.58),
+            rgba(0, 0, 0, 0.72)
+        ),
+        url("Ruang Kerja Siber Futuristik DL.png") !important;
+
+    background-size: 100% 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    background-color: #050505 !important;
+}
+
+/* NETWORK TECHNICIAN */
+#experience .network-card {
+    background-size: 100% 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
