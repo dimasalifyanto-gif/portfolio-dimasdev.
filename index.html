@@ -622,55 +622,67 @@ revealElements.forEach((element) => {
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    const idCard = document.querySelector(
-        "#home .idcard-container"
-    );
-
+    const idCard = document.querySelector("#home .idcard-container");
     if (!idCard) return;
 
-    // Saat kursor masuk ke ID Card
-    idCard.addEventListener("pointerenter", function () {
-        idCard.classList.add("pointer-active");
+    const lanyard = idCard.querySelector(".idcard-lanyard");
+    if (!lanyard) return;
+
+    idCard.addEventListener("pointerenter", function (event) {
+        if (event.pointerType !== "touch") {
+            idCard.classList.add("pointer-active");
+        }
     });
 
-    // Membaca gerakan kursor
     idCard.addEventListener("pointermove", function (event) {
 
         if (event.pointerType === "touch") return;
 
         const rect = idCard.getBoundingClientRect();
 
-        // Posisi kursor relatif terhadap ID Card
-        const x = (
-            (event.clientX - rect.left) / rect.width - 0.5
-        ) * 2;
+        const x = Math.max(-1, Math.min(1,
+            ((event.clientX - rect.left) / rect.width - 0.5) * 2
+        ));
 
-        const y = (
-            (event.clientY - rect.top) / rect.height - 0.5
-        ) * 2;
+        const y = Math.max(-1, Math.min(1,
+            ((event.clientY - rect.top) / rect.height - 0.5) * 2
+        ));
 
-        // Gerakan kartu mengikuti kursor
-        const rotateX = -y * 8;
-        const rotateY = x * 10;
-        const rotateZ = x * 4;
-
-        const moveX = x * 4;
-        const moveY = y * 3;
-
+        // GERAKAN KARTU
         idCard.style.transform =
             `perspective(900px)
-             translate3d(${moveX}px, ${moveY}px, 0)
-             rotateX(${rotateX}deg)
-             rotateY(${rotateY}deg)
-             rotateZ(${rotateZ}deg)`;
+             translate3d(${x * 4}px, ${y * 3}px, 0)
+             rotateX(${-y * 8}deg)
+             rotateY(${x * 10}deg)
+             rotateZ(${x * 4}deg)`;
+
+        // RANTAI KIRI
+        lanyard.style.setProperty(
+            "--left-chain-angle", `${-x * 10 + y * 4}deg`
+        );
+        lanyard.style.setProperty(
+            "--left-chain-shift", `${-x * 3}px`
+        );
+
+        // RANTAI KANAN
+        lanyard.style.setProperty(
+            "--right-chain-angle", `${-x * 7 - y * 5}deg`
+        );
+        lanyard.style.setProperty(
+            "--right-chain-shift", `${x * 3}px`
+        );
     });
 
-    // Saat kursor meninggalkan kartu
+    // KEMBALI KE POSISI NORMAL
     idCard.addEventListener("pointerleave", function () {
 
         idCard.classList.remove("pointer-active");
-
         idCard.style.transform = "";
+
+        lanyard.style.removeProperty("--left-chain-angle");
+        lanyard.style.removeProperty("--left-chain-shift");
+        lanyard.style.removeProperty("--right-chain-angle");
+        lanyard.style.removeProperty("--right-chain-shift");
     });
 
 });
