@@ -1481,8 +1481,6 @@ footer p {
 }
 
 
-
-
 /* ==========================================
    D'LYFIANDEV - ID CARD
    CLEAN DOUBLE CHAIN EDITION
@@ -1503,61 +1501,90 @@ footer p {
     transform-origin: top center;
 }
 
+
 /* ==========================================
-   TWO SILVER CHAINS
+   TWO FLEXIBLE SILVER CHAINS
 ========================================== */
 
 #home .idcard-lanyard {
-    width: 68px;
-    height: 120px;
-    flex: 0 0 120px;
+    width: 90px !important;
+    height: 120px !important;
+    flex: 0 0 120px !important;
+
+    display: flex !important;
+    justify-content: space-between;
+    align-items: flex-start;
+
     position: relative;
-    display: block;
-    background: transparent;
-    border: none;
-    box-shadow: none;
+    box-sizing: border-box;
+    padding: 0 15px;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
-/* BOTH CHAIN TRACKS */
+/* REMOVE OLD PSEUDO CHAINS */
 #home .idcard-lanyard::before,
 #home .idcard-lanyard::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 14px;
-    height: 120px;
-
-    background-image:
-        radial-gradient(
-            ellipse 5px 8px,
-            transparent 43%,
-            #64748b 47%,
-            #ffffff 53%,
-            #cbd5e1 65%,
-            #475569 73%,
-            transparent 80%
-        );
-
-    background-size: 14px 21px;
-    background-repeat: repeat-y;
-    background-position: center top;
-
-    filter: drop-shadow(0 0 3px #94a3b8);
+    content: none !important;
+    display: none !important;
 }
 
-/* LEFT CHAIN */
-#home .idcard-lanyard::before {
-    left: 8px;
+/* CHAIN COLUMNS */
+#home .chain-column {
+    width: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* RIGHT CHAIN */
-#home .idcard-lanyard::after {
-    right: 8px;
+/* INDIVIDUAL CHAIN LINKS */
+#home .chain-link {
+    display: block;
+    width: 13px;
+    height: 20px;
+    flex-shrink: 0;
+
+    margin-top: -5px;
+
+    border: 3px solid #cbd5e1;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        90deg,
+        #475569,
+        #ffffff,
+        #94a3b8,
+        #e2e8f0
+    );
+
+    box-shadow:
+        inset 0 0 3px #ffffff,
+        0 0 3px rgba(255,255,255,0.5);
+
+    transform-origin: center center;
+
+    transform:
+        translateX(var(--chain-shift, 0px))
+        rotate(var(--chain-bend, 0deg));
+
+    transition: transform 0.1s ease-out;
 }
 
-/* REMOVE OLD TEXT */
-#home .idcard-lanyard span {
-    display: none;
+/* FIRST LINK */
+#home .chain-link:first-child {
+    margin-top: 0;
+}
+
+/* ALTERNATING LINKS */
+#home .chain-link:nth-child(even) {
+    border-color: #94a3b8;
+}
+
+/* SMOOTHER MOVEMENT */
+#home .pointer-active .chain-link {
+    transition: transform 0.06s linear;
 }
 
 /* METAL CLIP */
