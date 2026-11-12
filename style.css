@@ -1361,119 +1361,80 @@ footer p {
 }
 
 
-/* =================================
-   WORK EXPERIENCE BACKGROUND
-================================= */
 
-/* BASE EXPERIENCE CARD */
+/* =====================================
+   WORK EXPERIENCE - PHOTO BACKGROUND
+===================================== */
+
+/* BASE CARD */
 #experience .experience-card {
     position: relative;
     overflow: hidden;
-    background-size: cover;
-    background-position: center;
+    background-color: #080808 !important;
     background-repeat: no-repeat;
+    border: 1px solid rgba(255,255,255,0.3);
     isolation: isolate;
 }
 
-/* DARK OVERLAY */
-#experience .experience-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(0, 5, 2, 0.45),
-        rgba(0, 5, 2, 0.92)
-    );
-    z-index: -1;
-}
-
 /* ADMIN / OPERATOR */
-#experience .experience-card.admin-card {
-    background-image: url("./admin%20operator.png") !important;
+#experience .admin-card {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.95) 0%,
+            rgba(0,0,0,0.75) 45%,
+            rgba(0,0,0,0.25) 100%
+        ),
+        url("work-admin.jpg") !important;
+
+    background-size: 100% 100%;
+    background-position: center;
 }
 
 /* NETWORK TECHNICIAN */
-#experience .experience-card.network-card {
-    background-image: url("./Network%20Technician.png") !important;
+#experience .network-card {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.95) 0%,
+            rgba(0,0,0,0.75) 45%,
+            rgba(0,0,0,0.20) 100%
+        ),
+        url("work-network.jpeg") !important;
+
+    background-size: auto 100%;
+    background-position: right center;
 }
 
-/* =================================
-   WORK EXPERIENCE - TEXT VISIBILITY
-================================= */
-
-/* OVERLAY LEBIH GELAP */
-#experience .experience-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.78);
-    z-index: 0;
-    pointer-events: none;
-}
-
-/* POSISI KONTEN DI ATAS OVERLAY */
+/* CONTENT ABOVE BACKGROUND */
 #experience .experience-card > * {
     position: relative;
     z-index: 1;
 }
 
-/* JUDUL PEKERJAAN */
+/* TEXT */
 #experience .experience-card h3 {
-    color: #00ff66 !important;
-    font-size: 23px;
-    font-weight: 800;
-    text-shadow:
-        0 0 5px rgba(0, 255, 102, 0.7),
-        0 2px 5px #000;
-}
-
-/* NAMA PERUSAHAAN */
-#experience .experience-card h4 {
     color: #ffffff !important;
-    font-weight: 700;
-    text-shadow: 0 2px 6px #000;
 }
 
-/* DESKRIPSI */
-#experience .experience-description {
+#experience .experience-card h4,
+#experience .experience-card p,
+#experience .experience-card li {
     color: #ffffff !important;
-    font-size: 15px;
-    line-height: 1.8;
-    text-shadow: 0 2px 5px #000;
 }
 
-/* JUDUL TANGGUNG JAWAB */
-#experience .responsibility-title {
-    color: #00ff66 !important;
-    font-weight: 800;
-    text-shadow: 0 0 8px rgba(0, 255, 102, 0.5);
-}
-
-/* DAFTAR TANGGUNG JAWAB */
-#experience .responsibility-list li {
-    color: #f8fafc !important;
-    font-size: 14px;
-    line-height: 1.9;
-    text-shadow: 0 2px 5px #000;
-    margin-bottom: 5px;
-}
-
-/* TANGGAL PEKERJAAN */
+/* DATES */
 #experience .experience-date {
-    color: #00ff66 !important;
-    font-weight: 800;
-    background: rgba(0, 0, 0, 0.75);
-    border: 1px solid rgba(0, 255, 102, 0.5);
-    border-radius: 8px;
-    padding: 7px 12px;
+    color: #ffffff !important;
+    background: rgba(0,0,0,0.75);
+    border-color: rgba(255,255,255,0.5);
 }
 
 /* ICON */
 #experience .experience-header h3 i {
-    color: #00ff66 !important;
-    text-shadow: 0 0 10px #00ff66;
+    color: #ffffff !important;
 }
+
 /* TRAINING TITLE */
 .training-title {
     color: #ffffff !important;
