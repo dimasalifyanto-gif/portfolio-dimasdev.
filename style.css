@@ -1798,3 +1798,11 @@ footer p {
     transform-origin: top center;
 }
 
+/* =====================================
+   GLOBAL MONOCHROME FILTER
+   BLACK & WHITE WEBSITE
+===================================== */
+
+html {
+    filter: grayscale(100%) !important;
+}
