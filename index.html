@@ -618,24 +618,61 @@ revealElements.forEach((element) => {
 </script>
 
                 
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    const idCard = document.querySelector("#home .idcard-container");
+
+    const idCard = document.querySelector(
+        "#home .idcard-container"
+    );
 
     if (!idCard) return;
 
-    idCard.addEventListener("mouseenter", function () {
-        idCard.classList.remove("idcard-swing");
-
-        // Memulai ulang animasi setiap kali kursor masuk
-        void idCard.offsetWidth;
-
-        idCard.classList.add("idcard-swing");
+    // Saat kursor masuk ke ID Card
+    idCard.addEventListener("pointerenter", function () {
+        idCard.classList.add("pointer-active");
     });
 
-    idCard.addEventListener("animationend", function () {
-        idCard.classList.remove("idcard-swing");
+    // Membaca gerakan kursor
+    idCard.addEventListener("pointermove", function (event) {
+
+        if (event.pointerType === "touch") return;
+
+        const rect = idCard.getBoundingClientRect();
+
+        // Posisi kursor relatif terhadap ID Card
+        const x = (
+            (event.clientX - rect.left) / rect.width - 0.5
+        ) * 2;
+
+        const y = (
+            (event.clientY - rect.top) / rect.height - 0.5
+        ) * 2;
+
+        // Gerakan kartu mengikuti kursor
+        const rotateX = -y * 8;
+        const rotateY = x * 10;
+        const rotateZ = x * 4;
+
+        const moveX = x * 4;
+        const moveY = y * 3;
+
+        idCard.style.transform =
+            `perspective(900px)
+             translate3d(${moveX}px, ${moveY}px, 0)
+             rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)
+             rotateZ(${rotateZ}deg)`;
     });
+
+    // Saat kursor meninggalkan kartu
+    idCard.addEventListener("pointerleave", function () {
+
+        idCard.classList.remove("pointer-active");
+
+        idCard.style.transform = "";
+    });
+
 });
 </script>
 
