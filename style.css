@@ -1761,3 +1761,40 @@ footer p {
         text-align: center;
     }
 }
+
+/* =====================================
+   FLEXIBLE DOUBLE SILVER CHAIN
+===================================== */
+
+/* GERAKAN RANTAI KIRI */
+#home .idcard-lanyard::before {
+    transform-origin: top center;
+    transform:
+        translateX(var(--left-chain-shift, 0px))
+        rotate(var(--left-chain-angle, 0deg));
+
+    transition: transform 0.18s ease-out;
+}
+
+/* GERAKAN RANTAI KANAN */
+#home .idcard-lanyard::after {
+    transform-origin: top center;
+    transform:
+        translateX(var(--right-chain-shift, 0px))
+        rotate(var(--right-chain-angle, 0deg));
+
+    transition: transform 0.18s ease-out;
+}
+
+/* SAAT KURSOR BERGERAK */
+#home .idcard-container.pointer-active .idcard-lanyard::before,
+#home .idcard-container.pointer-active .idcard-lanyard::after {
+    transition: transform 0.08s ease-out;
+}
+
+/* SAAT KURSOR MENJAUH */
+#home .idcard-lanyard::before,
+#home .idcard-lanyard::after {
+    transform-origin: top center;
+}
+
