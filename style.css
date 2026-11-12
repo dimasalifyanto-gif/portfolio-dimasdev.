@@ -1787,28 +1787,38 @@ footer p {
 }
 
 /* =====================================
-   WORK EXPERIENCE - FULL BACKGROUND
+   WORK EXPERIENCE - PHOTO BACKGROUND
 ===================================== */
+
+#experience .experience-card {
+    position: relative;
+    overflow: hidden;
+    background-color: #050505 !important;
+    background-repeat: no-repeat !important;
+    background-position: right center !important;
+    background-size: auto 100% !important;
+}
 
 /* ADMIN / OPERATOR */
 #experience .admin-card {
     background-image:
         linear-gradient(
-            rgba(0, 0, 0, 0.58),
-            rgba(0, 0, 0, 0.72)
+            90deg,
+            rgba(0,0,0,0.95) 0%,
+            rgba(0,0,0,0.75) 45%,
+            rgba(0,0,0,0.15) 100%
         ),
-        url("Ruang Kerja Siber Futuristik DL.png") !important;
-
-    background-size: 100% 100% !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-
-    background-color: #050505 !important;
+        url("work-admin.jpg") !important;
 }
 
 /* NETWORK TECHNICIAN */
 #experience .network-card {
-    background-size: 100% 100% !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.95) 0%,
+            rgba(0,0,0,0.75) 45%,
+            rgba(0,0,0,0.15) 100%
+        ),
+        url("work-network.jpeg") !important;
 }
