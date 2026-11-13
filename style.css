@@ -444,6 +444,26 @@ header {
     line-height: 1.8;
 }
 
+
+/* EDUCATION GRID - SPACING */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 35px;
+    margin-top: 35px;
+    padding: 0 10px;
+    align-items: stretch;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 700px) {
+    .education-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 0;
+    }
+}
+
 /* TRAINING SECTION */
 .training-card {
     background: linear-gradient(145deg, #101a14, #080d0a);
