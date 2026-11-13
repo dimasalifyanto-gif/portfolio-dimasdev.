@@ -1830,3 +1830,48 @@ footer p {
     background-position: center, center !important;
     background-repeat: no-repeat, no-repeat !important;
 }
+
+
+/* =====================================
+   PROJECT CARDS - INDIVIDUAL BACKGROUND
+===================================== */
+
+#projects .project-card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background-repeat: no-repeat !important;
+    background-size: 100% 100%, cover !important;
+    background-position: center center !important;
+    border: 1px solid #00ff66;
+}
+
+/* PROJECT 1 - PERSONAL PORTFOLIO */
+#projects .project-card:nth-child(1) {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.78)
+        ),
+        url("./Personal%20Portfolio.png") !important;
+}
+
+/* PROJECT 2 - SOFTWARE ENGINEERING */
+#projects .project-card:nth-child(2) {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.78)
+        ),
+        url("./Software%20Engineering%20Practice.jpg") !important;
+}
+
+/* PROJECT 3 - NETWORK SIMULATION */
+#projects .project-card:nth-child(3) {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.78)
+        ),
+        url("./Network%20Simulation.jpg") !important;
+}
