@@ -455,6 +455,76 @@ header {
     padding: 0 10px;
 }
 
+
+/* EDUCATION TIMELINE */
+#education .education-grid {
+    position: relative;
+    padding-left: 48px;
+}
+
+/* TALI PENGHUBUNG */
+#education .education-grid::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    bottom: 15px;
+    width: 3px;
+
+    background: linear-gradient(
+        180deg,
+        #00ff66,
+        #ffffff,
+        #00ff66
+    );
+
+    box-shadow: 0 0 12px #00ff66;
+    border-radius: 10px;
+}
+
+/* KARTU PENDIDIKAN */
+#education .education-grid .education-card {
+    position: relative;
+    z-index: 1;
+}
+
+/* BULATAN PENGHUBUNG */
+#education .education-grid .education-card::before {
+    content: "";
+    position: absolute;
+
+    width: 16px;
+    height: 16px;
+
+    left: -36px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: #00ff66;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px #00ff66,
+        0 0 18px rgba(0, 255, 102, 0.7);
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 700px) {
+    #education .education-grid {
+        padding-left: 42px;
+    }
+
+    #education .education-grid::before {
+        left: 16px;
+    }
+
+    #education .education-grid .education-card::before {
+        left: -33px;
+    }
+}
+
+
 /* EDUCATION CARD */
 .education-grid .education-card {
     width: 100%;
