@@ -445,22 +445,28 @@ header {
 }
 
 
-/* EDUCATION GRID - SPACING */
+
+/* EDUCATION GRID - VERTICAL */
 .education-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 35px;
+    grid-template-columns: 1fr;
+    gap: 25px;
     margin-top: 35px;
     padding: 0 10px;
-    align-items: stretch;
+}
+
+/* EDUCATION CARD */
+.education-grid .education-card {
+    width: 100%;
+    padding: 30px;
+    min-height: 130px;
 }
 
 /* RESPONSIVE HP */
 @media (max-width: 700px) {
     .education-grid {
-        grid-template-columns: 1fr;
-        gap: 22px;
         padding: 0;
+        gap: 20px;
     }
 }
 
