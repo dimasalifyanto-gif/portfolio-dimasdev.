@@ -2074,3 +2074,68 @@ footer p {
         font-size: 23px;
     }
 }
+
+
+/* =================================
+   OFFICIAL TECHNOLOGY LOGO COLORS
+================================= */
+
+/* HTML5 */
+.tech-logo-card:nth-child(1) i {
+    color: #E34F26;
+}
+
+/* CSS3 */
+.tech-logo-card:nth-child(2) i {
+    color: #1572B6;
+}
+
+/* JAVASCRIPT */
+.tech-logo-card:nth-child(3) i {
+    color: #F7DF1E;
+}
+
+/* GITHUB */
+.tech-logo-card:nth-child(4) i {
+    color: #FFFFFF;
+}
+
+/* GIT */
+.tech-logo-card:nth-child(5) i {
+    color: #F05032;
+}
+
+/* PYTHON */
+.tech-logo-card:nth-child(6) i {
+    color: #3776AB;
+}
+
+/* LINUX */
+.tech-logo-card:nth-child(7) i {
+    color: #FCC624;
+}
+
+/* NETWORKING */
+.tech-logo-card:nth-child(8) i {
+    color: #00B8D9;
+}
+
+/* DATABASE */
+.tech-logo-card:nth-child(9) i {
+    color: #4DB33D;
+}
+
+/* SERVER */
+.tech-logo-card:nth-child(10) i {
+    color: #A0AEC0;
+}
+
+/* TERMINAL */
+.tech-logo-card:nth-child(11) i {
+    color: #A78BFA;
+}
+
+/* PROGRAMMING */
+.tech-logo-card:nth-child(12) i {
+    color: #00FF66;
+}
