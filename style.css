@@ -1804,14 +1804,14 @@ footer p {
     background-image:
         linear-gradient(
             90deg,
-            rgba(0,0,0,0.92) 0%,
-            rgba(0,0,0,0.65) 45%,
+            rgba(0,0,0,0.75) 0%,
+            rgba(0,0,0,0.35) 45%,
             rgba(0,0,0,0.10) 100%
         ),
-        url("work-admin.jpg") !important;
+        url("./work-admin.jpg") !important;
 
-    background-size: 100% 100%, auto 100% !important;
-    background-position: center, right center !important;
+    background-size: 100% 100%, cover !important;
+    background-position: center, center !important;
     background-repeat: no-repeat, no-repeat !important;
 }
 
