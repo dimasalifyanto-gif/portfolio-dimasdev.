@@ -1824,7 +1824,7 @@ footer p {
             rgba(0,0,0,0.35) 45%,
             rgba(0,0,0,0.10) 100%
         ),
-        url("./work-network-banner.jpeg") !important;
+        url("work-network.jpeg") !important;
 
     background-size: 100% 100%, cover !important;
     background-position: center, center !important;
