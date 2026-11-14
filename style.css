@@ -2578,3 +2578,194 @@ footer p {
         padding: 17px 3px;
     }
 }
+
+
+/* =====================================
+   ABOUT ME - MY JOURNEY TIMELINE
+===================================== */
+
+/* PEMBUNGKUS TIMELINE */
+#about .journey-section {
+    width: 100%;
+    margin-top: 45px;
+    padding: 35px;
+    background: rgba(5, 12, 7, 0.88);
+    border: 1px solid rgba(0, 255, 102, 0.25);
+    border-radius: 18px;
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.06);
+}
+
+/* JUDUL TIMELINE */
+#about .journey-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+#about .journey-heading > span {
+    color: #00ff66;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+#about .journey-heading h3 {
+    color: #ffffff;
+    font-size: 29px;
+    margin: 8px 0;
+}
+
+#about .journey-heading h3 span {
+    color: #00ff66;
+}
+
+#about .journey-heading p {
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+/* AREA TIMELINE */
+#about .journey-timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* GARIS PENGHUBUNG */
+#about .journey-timeline::before {
+    content: "";
+    position: absolute;
+    top: 25px;
+    bottom: 25px;
+    left: 27px;
+    width: 2px;
+    background: linear-gradient(
+        180deg,
+        #00ff66,
+        rgba(0, 255, 102, 0.15)
+    );
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.5);
+}
+
+/* ITEM TIMELINE */
+#about .journey-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 55px minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
+}
+
+/* IKON TIMELINE */
+#about .journey-icon {
+    position: relative;
+    z-index: 2;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #00ff66;
+    font-size: 20px;
+
+    background: #07130b;
+    border: 2px solid #00ff66;
+    border-radius: 50%;
+
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
+}
+
+/* KARTU PERJALANAN */
+#about .journey-card {
+    min-width: 0;
+    padding: 22px 25px;
+    background: linear-gradient(
+        145deg,
+        rgba(16, 26, 20, 0.96),
+        rgba(3, 8, 5, 0.96)
+    );
+    border: 1px solid rgba(0, 255, 102, 0.25);
+    border-left: 3px solid #00ff66;
+    border-radius: 13px;
+    transition: 0.3s ease;
+}
+
+/* KATEGORI */
+#about .journey-category {
+    display: inline-block;
+    color: #00ff66;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 9px;
+}
+
+/* JUDUL PERJALANAN */
+#about .journey-card h4 {
+    color: #ffffff;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+/* DESKRIPSI */
+#about .journey-card p {
+    color: #d1d5db;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* EFEK HOVER */
+#about .journey-card:hover {
+    transform: translateX(6px);
+    border-color: #00ff66;
+    box-shadow: 0 0 18px rgba(0, 255, 102, 0.15);
+}
+
+#about .journey-item:hover .journey-icon {
+    color: #ffffff;
+    background: rgba(0, 255, 102, 0.18);
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.4);
+    transition: 0.3s ease;
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 800px) {
+    #about .journey-section {
+        padding: 25px;
+    }
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 600px) {
+    #about .journey-section {
+        padding: 22px 16px;
+    }
+
+    #about .journey-heading h3 {
+        font-size: 24px;
+    }
+
+    #about .journey-item {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    #about .journey-timeline::before {
+        left: 20px;
+    }
+
+    #about .journey-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+    }
+
+    #about .journey-card {
+        padding: 18px;
+    }
+
+    #about .journey-card h4 {
+        font-size: 15px;
+    }
+}
