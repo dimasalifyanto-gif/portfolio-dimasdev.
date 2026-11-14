@@ -2333,3 +2333,52 @@ footer p {
     margin-left: auto;
     align-self: flex-start;
 }
+
+
+/* =====================================
+   FIX SECTION LAYOUT
+   SKILLS & PROJECTS VERTICAL ORDER
+===================================== */
+
+#skills,
+#projects {
+    display: block !important;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    float: none !important;
+    clear: both;
+}
+
+/* SKILLS GRID */
+#skills .icon-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: 25px;
+}
+
+/* PROJECTS GRID */
+#projects .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: 25px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    #skills .icon-skills-grid,
+    #projects .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    #skills .icon-skills-grid,
+    #projects .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
