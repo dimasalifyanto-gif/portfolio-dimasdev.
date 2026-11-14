@@ -2190,3 +2190,123 @@ footer p {
         padding: 22px;
     }
 }
+
+
+/* =====================================
+   WORK EXPERIENCE - CARD DESIGN UPGRADE
+   ORIGINAL BACKGROUND IMAGES PRESERVED
+===================================== */
+
+/* SUSUNAN DUA KOLOM */
+#experience {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    align-items: stretch;
+}
+
+#experience > .section-title {
+    grid-column: 1 / -1;
+    margin-bottom: 15px;
+}
+
+/* KARTU PENGALAMAN */
+#experience .experience-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 480px;
+    margin-bottom: 0;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid rgba(0, 255, 102, 0.5);
+    border-left: 4px solid #00ff66;
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* HOVER */
+#experience .experience-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 0 22px rgba(0, 255, 102, 0.25);
+}
+
+/* JUDUL */
+#experience .experience-header h3 {
+    color: #ffffff !important;
+    font-size: 21px;
+    line-height: 1.5;
+}
+
+#experience .experience-header h3 i {
+    color: #00ff66 !important;
+    margin-right: 8px;
+}
+
+#experience .experience-header h4 {
+    color: #ffffff !important;
+    margin-top: 8px;
+}
+
+/* TANGGAL */
+#experience .experience-date {
+    color: #ffffff !important;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #00ff66;
+    border-radius: 20px;
+    padding: 7px 13px;
+    font-size: 12px;
+}
+
+/* DESKRIPSI */
+#experience .experience-description {
+    color: #ffffff !important;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* TANGGUNG JAWAB */
+#experience .responsibility-title {
+    color: #00ff66 !important;
+    margin-bottom: 15px;
+}
+
+#experience .experience-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+#experience .experience-card li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    color: #ffffff !important;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+#experience .experience-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00ff66;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    #experience {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    #experience .experience-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    #experience .experience-card {
+        padding: 23px;
+    }
+}
