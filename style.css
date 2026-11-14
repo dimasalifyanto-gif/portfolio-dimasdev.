@@ -2310,3 +2310,26 @@ footer p {
         padding: 23px;
     }
 }
+
+
+/* TANGGAL KERJA SEJAJAR DENGAN JUDUL */
+#experience .experience-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 12px;
+}
+
+#experience .experience-header > div {
+    flex: 1;
+    min-width: 0;
+}
+
+#experience .experience-date {
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin-left: auto;
+    align-self: flex-start;
+}
