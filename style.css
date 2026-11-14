@@ -2382,3 +2382,199 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* =========================================
+   D'LYFIANDEV - ABOUT ME PREMIUM DESIGN
+========================================= */
+
+/* LAYOUT UTAMA */
+#about .about-layout {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 25px;
+    align-items: stretch;
+    width: 100%;
+}
+
+/* KARTU PERKENALAN KIRI */
+#about .about-content {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 35px;
+    text-align: left;
+
+    background: linear-gradient(
+        145deg,
+        rgba(15, 22, 17, 0.97),
+        rgba(3, 8, 5, 0.97)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-left: 4px solid #00ff66;
+    border-radius: 17px;
+
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.07);
+}
+
+/* LABEL KECIL */
+#about .about-label {
+    display: inline-block;
+    color: #00ff66;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+/* JUDUL PERKENALAN */
+#about .about-content h3 {
+    color: #ffffff;
+    font-size: 27px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+#about .about-content h3 span {
+    color: #ffffff;
+}
+
+/* LABEL PROFESI */
+#about .about-role {
+    display: inline-block;
+    color: #00ff66;
+    background: rgba(0, 255, 102, 0.08);
+    border: 1px solid rgba(0, 255, 102, 0.4);
+    border-radius: 20px;
+    padding: 7px 12px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+/* PARAGRAF */
+#about .about-content p {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 16px;
+}
+
+#about .about-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* KARTU INFORMASI KANAN */
+#about .about-highlights {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 22px 25px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(15, 22, 17, 0.97),
+        rgba(3, 8, 5, 0.97)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 17px;
+
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.07);
+}
+
+/* SETIAP BARIS INFORMASI */
+#about .about-info-card {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 20px 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    transition: 0.3s ease;
+}
+
+#about .about-info-card:last-child {
+    border-bottom: none;
+}
+
+/* IKON */
+#about .about-info-card i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    color: #00ff66;
+    font-size: 21px;
+
+    background: rgba(0, 255, 102, 0.08);
+    border: 1px solid rgba(0, 255, 102, 0.35);
+    border-radius: 12px;
+}
+
+/* JUDUL INFORMASI */
+#about .about-info-card h4 {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* DESKRIPSI INFORMASI */
+#about .about-info-card p {
+    color: #d1d5db;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* EFEK HOVER */
+#about .about-info-card:hover {
+    transform: translateX(5px);
+}
+
+#about .about-info-card:hover i {
+    color: #ffffff;
+    background: rgba(0, 255, 102, 0.2);
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    #about .about-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    #about .about-highlights {
+        padding: 15px 22px;
+    }
+}
+
+/* HP */
+@media (max-width: 600px) {
+    #about .about-content {
+        padding: 24px;
+    }
+
+    #about .about-content h3 {
+        font-size: 23px;
+    }
+
+    #about .about-content p {
+        font-size: 13px;
+    }
+
+    #about .about-highlights {
+        padding: 12px 18px;
+    }
+
+    #about .about-info-card {
+        gap: 13px;
+        padding: 17px 3px;
+    }
+}
