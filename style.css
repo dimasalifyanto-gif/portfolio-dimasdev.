@@ -2142,3 +2142,51 @@ footer p {
 .tech-logo-card:nth-child(12) i {
     color: #00FF66;
 }
+
+
+/* =====================================
+   EDUCATION - NEON TIMELINE CARDS FIX
+===================================== */
+
+#education .education-grid .education-card {
+    display: block;
+    position: relative;
+    width: 100%;
+    min-height: 130px;
+    padding: 28px 30px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(16, 26, 20, 0.97),
+        rgba(3, 8, 5, 0.97)
+    ) !important;
+
+    border: 1px solid rgba(0, 255, 102, 0.4) !important;
+    border-left: 4px solid #00ff66 !important;
+    border-radius: 14px;
+
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.08);
+    transition: 0.3s ease;
+}
+
+#education .education-grid .education-card:hover {
+    transform: translateX(6px);
+    border-color: #00ff66 !important;
+    box-shadow: 0 0 22px rgba(0, 255, 102, 0.2);
+}
+
+#education .education-grid .education-card h3 {
+    color: #00ff66 !important;
+    margin-bottom: 10px;
+}
+
+#education .education-grid .education-card p {
+    color: #ffffff !important;
+    line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+    #education .education-grid .education-card {
+        padding: 22px;
+    }
+}
