@@ -2943,3 +2943,38 @@ footer p {
 #home .pointer-active .chain-link {
     transition: transform 0.04s linear;
 }
+
+
+/* =====================================
+   ADVANCED WHIP ROPE PHYSICS
+===================================== */
+
+#home .chain-column {
+    transform-origin: top center;
+    will-change: transform;
+}
+
+#home .chain-link {
+    transform-origin: top center;
+    will-change: transform;
+    transition: none !important;
+}
+
+#home .pointer-active .chain-link {
+    transition: none !important;
+}
+
+/* KILAU SERAT TALI */
+#home .chain-link::after {
+    opacity: 0.65;
+    box-shadow: 0 0 3px rgba(255,255,255,0.25);
+}
+
+/* PANTULAN CAHAYA TALI */
+#home .chain-link:nth-child(odd) {
+    filter: brightness(1.08);
+}
+
+#home .chain-link:nth-child(even) {
+    filter: brightness(0.85);
+}
