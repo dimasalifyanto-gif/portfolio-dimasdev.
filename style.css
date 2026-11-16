@@ -2846,3 +2846,100 @@ footer p {
 #home .pointer-active .chain-link {
     transition: transform 0.06s linear;
 }
+
+
+/* ==========================================
+   D'LYFIANDEV - PREMIUM FLEXIBLE WHIP ROPE
+========================================== */
+
+#home .idcard-lanyard {
+    width: 90px !important;
+    height: 120px !important;
+    flex: 0 0 120px !important;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 15px;
+}
+
+/* DUA TALI */
+#home .chain-column {
+    width: 15px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transform-origin: top center;
+}
+
+/* TEKSTUR ANYAMAN TALI */
+#home .chain-link {
+    position: relative;
+    display: block;
+    width: 8px;
+    height: 25px;
+    flex: 0 0 25px;
+    margin-top: -8px;
+
+    border: none !important;
+    border-radius: 999px;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            rgba(255,255,255,0.32) 0px,
+            rgba(255,255,255,0.32) 1px,
+            transparent 1px,
+            transparent 4px
+        ),
+        repeating-linear-gradient(
+            45deg,
+            rgba(0,0,0,0.45) 0px,
+            rgba(0,0,0,0.45) 1px,
+            transparent 1px,
+            transparent 4px
+        ),
+        linear-gradient(
+            90deg,
+            #090909,
+            #62676b,
+            #25292c,
+            #080808
+        );
+
+    box-shadow:
+        inset 1px 0 3px rgba(255,255,255,0.35),
+        inset -2px 0 3px rgba(0,0,0,0.8),
+        0 1px 2px rgba(0,0,0,0.6);
+
+    transform-origin: top center;
+    transform:
+        translateX(var(--rope-x, 0px))
+        rotate(var(--rope-angle, 0deg));
+
+    transition: transform 0.12s ease-out;
+    will-change: transform;
+}
+
+/* AWAL TALI */
+#home .chain-link:first-child {
+    margin-top: 0;
+}
+
+/* GARIS KILAU SERAT TALI */
+#home .chain-link::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    left: 3px;
+    width: 1px;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.28);
+}
+
+/* SAAT KURSOR BERGERAK */
+#home .pointer-active .chain-link {
+    transition: transform 0.04s linear;
+}
