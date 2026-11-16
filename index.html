@@ -925,9 +925,9 @@ revealElements.forEach((element) => {
 
 
 
+
 <!-- =====================================
-     D'LYFIANDEV - ADVANCED WHIP ROPE
-     SPRING + INERTIA ANIMATION
+     ID CARD - CONTINUOUS WHIP ROPE PHYSICS
 ===================================== -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -944,103 +944,91 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!lanyard) return;
 
-    const columns = lanyard.querySelectorAll(
-        ".chain-column"
+    const columns = Array.from(
+        lanyard.querySelectorAll(".chain-column")
     );
 
-    const ropes = [];
+    if (columns.length < 2) return;
 
-    /* SIAPKAN SETIAP RUAS TALI */
-    columns.forEach(function (column, sideIndex) {
 
-        const links = column.querySelectorAll(".chain-link");
+    /* STATE KEDUA TALI */
+    const ropes = columns.map((column, index) => ({
+        element: column,
+        side: index === 0 ? -1 : 1,
 
-        links.forEach(function (link, index) {
+        angle: 0,
+        angleVelocity: 0,
+        targetAngle: 0,
 
-            ropes.push({
-                element: link,
-                side: sideIndex === 0 ? -1 : 1,
-                progress: (index + 1) / links.length,
+        shift: 0,
+        shiftVelocity: 0,
+        targetShift: 0,
 
-                angle: 0,
-                angleVelocity: 0,
-                targetAngle: 0,
-
-                shift: 0,
-                shiftVelocity: 0,
-                targetShift: 0
-            });
-
-        });
-
-    });
+        bend: 0,
+        bendVelocity: 0,
+        targetBend: 0
+    }));
 
     let active = false;
-    let animationRunning = false;
-    let lastX = 0;
-    let lastY = 0;
-    let lastTime = 0;
+    let running = false;
 
-    /* BATAS GERAKAN */
+    let previousX = 0;
+    let previousY = 0;
+    let previousTime = 0;
+
+
+    /* BATAS NILAI */
     function clamp(value, min, max) {
         return Math.max(min, Math.min(max, value));
     }
 
-    /* MULAI ANIMASI */
-    function startAnimation() {
 
-        if (animationRunning) return;
-
-        animationRunning = true;
-        requestAnimationFrame(animateRopes);
-
-    }
-
-    /* ANIMASI PEGAS TALI */
+    /* ANIMASI PEGAS */
     function animateRopes() {
 
         let settled = true;
 
         ropes.forEach(function (rope) {
 
-            const p = rope.progress;
-
-            /* SPRING ANGLE */
+            /* GERAKAN SUDUT */
             rope.angleVelocity +=
-                (rope.targetAngle - rope.angle) * 0.22;
+                (rope.targetAngle - rope.angle) * 0.20;
 
-            rope.angleVelocity *= 0.72;
-
+            rope.angleVelocity *= 0.76;
             rope.angle += rope.angleVelocity;
 
 
-            /* SPRING POSITION */
+            /* GERAKAN SAMPING */
             rope.shiftVelocity +=
-                (rope.targetShift - rope.shift) * 0.24;
+                (rope.targetShift - rope.shift) * 0.22;
 
-            rope.shiftVelocity *= 0.70;
-
+            rope.shiftVelocity *= 0.74;
             rope.shift += rope.shiftVelocity;
 
 
-            /* TERAPKAN KE RUAS TALI */
-            rope.element.style.setProperty(
-                "--rope-angle",
-                `${rope.angle}deg`
-            );
+            /* LENTURAN TALI */
+            rope.bendVelocity +=
+                (rope.targetBend - rope.bend) * 0.18;
 
-            rope.element.style.setProperty(
-                "--rope-x",
-                `${rope.shift}px`
-            );
+            rope.bendVelocity *= 0.76;
+            rope.bend += rope.bendVelocity;
 
 
-            /* CEK APAKAH TALI SUDAH STABIL */
+            /* TERAPKAN KE TALI UTUH */
+            rope.element.style.transform =
+                `translateX(${rope.shift}px)
+                 rotate(${rope.angle}deg)
+                 skewX(${rope.bend}deg)`;
+
+
+            /* CEK STABILITAS */
             if (
-                Math.abs(rope.angle - rope.targetAngle) > 0.025 ||
-                Math.abs(rope.shift - rope.targetShift) > 0.025 ||
-                Math.abs(rope.angleVelocity) > 0.025 ||
-                Math.abs(rope.shiftVelocity) > 0.025
+                Math.abs(rope.angle - rope.targetAngle) > 0.02 ||
+                Math.abs(rope.shift - rope.targetShift) > 0.02 ||
+                Math.abs(rope.bend - rope.targetBend) > 0.02 ||
+                Math.abs(rope.angleVelocity) > 0.02 ||
+                Math.abs(rope.shiftVelocity) > 0.02 ||
+                Math.abs(rope.bendVelocity) > 0.02
             ) {
                 settled = false;
             }
@@ -1048,34 +1036,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-        /* HENTIKAN ANIMASI SAAT SUDAH STABIL */
-        if (settled) {
+        if (settled && !active) {
 
-            if (!active) {
+            ropes.forEach(function (rope) {
+                rope.element.style.transform = "";
+            });
 
-                ropes.forEach(function (rope) {
-                    rope.element.style.removeProperty(
-                        "--rope-angle"
-                    );
-
-                    rope.element.style.removeProperty(
-                        "--rope-x"
-                    );
-                });
-
-                idCard.classList.remove("pointer-active");
-            }
-
-            animationRunning = false;
+            running = false;
             return;
         }
 
         requestAnimationFrame(animateRopes);
-
     }
 
 
-    /* KURSOR MASUK */
+    function startAnimation() {
+        if (running) return;
+
+        running = true;
+        requestAnimationFrame(animateRopes);
+    }
+
+
+    /* MOUSE MASUK */
     idCard.addEventListener("pointerenter", function (event) {
 
         if (event.pointerType === "touch") return;
@@ -1086,7 +1069,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* KURSOR BERGERAK */
+    /* MOUSE BERGERAK */
     idCard.addEventListener("pointermove", function (event) {
 
         if (event.pointerType === "touch") return;
@@ -1095,40 +1078,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const x = clamp(
             ((event.clientX - rect.left) / rect.width - 0.5) * 2,
-            -1,
-            1
+            -1, 1
         );
 
         const y = clamp(
             ((event.clientY - rect.top) / rect.height - 0.5) * 2,
-            -1,
-            1
+            -1, 1
         );
 
         const now = performance.now();
 
-        const deltaTime = lastTime
-            ? Math.max(8, now - lastTime)
+        const delta = previousTime
+            ? Math.max(8, now - previousTime)
             : 16;
 
-        const velocityX = clamp(
-            (x - lastX) * (16 / deltaTime),
-            -0.10,
-            0.10
-        );
+        const velocityX = previousTime
+            ? clamp((x - previousX) * 16 / delta, -0.12, 0.12)
+            : 0;
 
-        const velocityY = clamp(
-            (y - lastY) * (16 / deltaTime),
-            -0.10,
-            0.10
-        );
+        const velocityY = previousTime
+            ? clamp((y - previousY) * 16 / delta, -0.12, 0.12)
+            : 0;
 
-        lastX = x;
-        lastY = y;
-        lastTime = now;
+        previousX = x;
+        previousY = y;
+        previousTime = now;
 
 
-        /* GERAKAN KARTU */
+        /* GERAKAN ID CARD */
         idCard.style.transform =
             `perspective(900px)
              translate3d(${x * 4}px, ${y * 3}px, 0)
@@ -1137,31 +1114,33 @@ document.addEventListener("DOMContentLoaded", function () {
              rotateZ(${x * 4}deg)`;
 
 
-        /* TARGET GERAKAN TALINYA */
+        /* GERAKAN KEDUA TALI */
         ropes.forEach(function (rope) {
 
-            const p = rope.progress;
             const side = rope.side;
 
             const wave = Math.sin(
-                p * Math.PI * 1.8 + x * 1.1
+                x * 1.3 + side * 0.8
             );
 
-            const whipImpulse =
-                velocityX * 150 * p * p +
-                velocityY * 45 * p * p;
-
-            /* TARGET SUDUT */
+            /* SUDUT AYUNAN */
             rope.targetAngle =
-                (x * 16 + y * 6) * p +
-                wave * side * 5 * p +
-                whipImpulse;
+                x * 13 +
+                y * 5 +
+                side * wave * 4 +
+                velocityX * 65;
 
-            /* TARGET PERGESERAN */
+            /* PERGESERAN */
             rope.targetShift =
-                (x * 5 + y * 2) * p +
-                wave * side * 2 * p +
-                velocityX * 25 * p * p;
+                x * 5 +
+                velocityX * 35 +
+                side * wave * 2;
+
+            /* LENTURAN / WHIP */
+            rope.targetBend =
+                y * 7 +
+                velocityX * 90 * side +
+                wave * 3;
 
         });
 
@@ -1170,25 +1149,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* KURSOR MENJAUH */
+    /* MOUSE KELUAR */
     idCard.addEventListener("pointerleave", function () {
 
         active = false;
 
-        lastX = 0;
-        lastY = 0;
-        lastTime = 0;
-
-        /* KEMBALIKAN KARTU */
+        idCard.classList.remove("pointer-active");
         idCard.style.transform = "";
 
-        /* TARGET TALI KEMBALI NORMAL */
+        previousX = 0;
+        previousY = 0;
+        previousTime = 0;
+
+
+        /* TALI KEMBALI KE POSISI NORMAL */
         ropes.forEach(function (rope) {
             rope.targetAngle = 0;
             rope.targetShift = 0;
+            rope.targetBend = 0;
         });
 
-        /* TALI KEMBALI DENGAN EFEK PEGAS */
+        /* EFEK AYUNAN PEGAS */
         startAnimation();
 
     });
