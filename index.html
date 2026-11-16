@@ -811,83 +811,12 @@
         <p>&copy; 2026 DimasDev. Created by Dimas Alifianto.</p>
     </footer>
 
-    <!-- ANIMASI SCROLL -->
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("active");
-                }
-            });
-        }, {
-            threshold: 0.15
-        });
-
-        document.querySelectorAll(
-            ".reveal, .reveal-left, .reveal-right"
-        ).forEach((element) => {
-            observer.observe(element);
-        });
-    </script>
-    
-    <script>
-    const typingText = document.getElementById("typing-text");
-
-    const roles = [
-        "Admin & Staff Administrasi",
-        "Aspiring Software Engineer",
-        "Web Developer"
-    ];
-
-    let roleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    function typeEffect() {
-        const currentRole = roles[roleIndex];
-
-        if (isDeleting) {
-            typingText.textContent = currentRole.substring(0, charIndex - 1);
-            charIndex--;
-        } else {
-            typingText.textContent = currentRole.substring(0, charIndex + 1);
-            charIndex++;
-        }
-
-        let speed = isDeleting ? 50 : 100;
-
-        if (!isDeleting && charIndex === currentRole.length) {
-            speed = 1500;
-            isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            roleIndex = (roleIndex + 1) % roles.length;
-            speed = 500;
-        }
-
-        setTimeout(typeEffect, speed);
-    }
-
-    typeEffect();
-</script>
-
+  
+<!-- =====================================
+     ANIMASI SCROLL
+===================================== -->
 <script>
-// CYBER SCANNER LOADING
-window.addEventListener("load", function () {
-    const loader = document.getElementById("loader");
-
-    setTimeout(function () {
-        loader.classList.add("loader-hidden");
-    }, 1800);
-});
-</script>
-
-    
-<script>
-// SCROLL REVEAL ANIMATION
-const revealElements = document.querySelectorAll(".reveal");
-
-const revealObserver = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add("active");
@@ -897,28 +826,142 @@ const revealObserver = new IntersectionObserver((entries) => {
     threshold: 0.15
 });
 
+document.querySelectorAll(
+    ".reveal, .reveal-left, .reveal-right"
+).forEach((element) => {
+    observer.observe(element);
+});
+</script>
+
+
+<!-- =====================================
+     TYPING TEXT ANIMATION
+===================================== -->
+<script>
+const typingText = document.getElementById("typing-text");
+
+const roles = [
+    "Admin & Staff Administrasi",
+    "Aspiring Software Engineer",
+    "Web Developer"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+    if (!typingText) return;
+
+    const currentRole = roles[roleIndex];
+
+    if (isDeleting) {
+        typingText.textContent =
+            currentRole.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typingText.textContent =
+            currentRole.substring(0, charIndex + 1);
+        charIndex++;
+    }
+
+    let speed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && charIndex === currentRole.length) {
+        speed = 1500;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        speed = 500;
+    }
+
+    setTimeout(typeEffect, speed);
+}
+
+typeEffect();
+</script>
+
+
+<!-- =====================================
+     CYBER SCANNER LOADING
+===================================== -->
+<script>
+window.addEventListener("load", function () {
+
+    const loader = document.getElementById("loader");
+    if (!loader) return;
+
+    setTimeout(function () {
+        loader.classList.add("loader-hidden");
+    }, 1800);
+
+});
+</script>
+
+
+<!-- =====================================
+     SCROLL REVEAL ANIMATION
+===================================== -->
+<script>
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+        }
+    });
+
+}, {
+    threshold: 0.15
+});
+
 revealElements.forEach((element) => {
     revealObserver.observe(element);
 });
 </script>
 
-                
 
+<!-- =====================================
+     ID CARD - FLEXIBLE WHIP ROPE MOTION
+===================================== -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    const idCard = document.querySelector("#home .idcard-container");
+    const idCard = document.querySelector(
+        "#home .idcard-container"
+    );
+
     if (!idCard) return;
 
-    const lanyard = idCard.querySelector(".idcard-lanyard");
+    const lanyard = idCard.querySelector(
+        ".idcard-lanyard"
+    );
+
     if (!lanyard) return;
 
+    const ropeColumns = lanyard.querySelectorAll(
+        ".chain-column"
+    );
+
+    const allLinks = lanyard.querySelectorAll(
+        ".chain-link"
+    );
+
+
+    /* AKTIFKAN GERAKAN */
     idCard.addEventListener("pointerenter", function (event) {
+
         if (event.pointerType !== "touch") {
             idCard.classList.add("pointer-active");
         }
+
     });
 
+
+    /* GERAKAN KURSOR */
     idCard.addEventListener("pointermove", function (event) {
 
         if (event.pointerType === "touch") return;
@@ -933,7 +976,8 @@ document.addEventListener("DOMContentLoaded", function () {
             ((event.clientY - rect.top) / rect.height - 0.5) * 2
         ));
 
-        // GERAKAN KARTU
+
+        /* GERAKAN BADAN ID CARD */
         idCard.style.transform =
             `perspective(900px)
              translate3d(${x * 4}px, ${y * 3}px, 0)
@@ -941,37 +985,74 @@ document.addEventListener("DOMContentLoaded", function () {
              rotateY(${x * 10}deg)
              rotateZ(${x * 4}deg)`;
 
-        // RANTAI KIRI
-        lanyard.style.setProperty(
-            "--left-chain-angle", `${-x * 10 + y * 4}deg`
-        );
-        lanyard.style.setProperty(
-            "--left-chain-shift", `${-x * 3}px`
-        );
 
-        // RANTAI KANAN
-        lanyard.style.setProperty(
-            "--right-chain-angle", `${-x * 7 - y * 5}deg`
-        );
-        lanyard.style.setProperty(
-            "--right-chain-shift", `${x * 3}px`
-        );
+        /* GERAKAN DUA TALI PECUT */
+        ropeColumns.forEach(function (column) {
+
+            const side = column.classList.contains("chain-left")
+                ? -1 : 1;
+
+            const links = column.querySelectorAll(
+                ".chain-link"
+            );
+
+            links.forEach(function (link, index) {
+
+                const progress = (index + 1) / links.length;
+
+                /* GELOMBANG TALI */
+                const wave = Math.sin(
+                    progress * Math.PI * 1.5 + x * 1.2
+                );
+
+                /* KELENTURAN */
+                const angle =
+                    (x * 18 + y * 7) * progress +
+                    wave * side * 7 * progress;
+
+                /* PERGESERAN */
+                const shift =
+                    (x * 6 + y * 2) * progress +
+                    wave * side * 3 * progress;
+
+                /* TERAPKAN KE SETIAP RUAS */
+                link.style.setProperty(
+                    "--rope-angle",
+                    `${angle}deg`
+                );
+
+                link.style.setProperty(
+                    "--rope-x",
+                    `${shift}px`
+                );
+
+            });
+
+        });
+
     });
 
-    // KEMBALI KE POSISI NORMAL
+
+    /* KEMBALI KE POSISI NORMAL */
     idCard.addEventListener("pointerleave", function () {
 
         idCard.classList.remove("pointer-active");
+
         idCard.style.transform = "";
 
-        lanyard.style.removeProperty("--left-chain-angle");
-        lanyard.style.removeProperty("--left-chain-shift");
-        lanyard.style.removeProperty("--right-chain-angle");
-        lanyard.style.removeProperty("--right-chain-shift");
+        allLinks.forEach(function (link) {
+
+            link.style.removeProperty("--rope-angle");
+
+            link.style.removeProperty("--rope-x");
+
+        });
+
     });
 
 });
 </script>
+
 
 </body>
 </html>
