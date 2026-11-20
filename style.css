@@ -3049,3 +3049,94 @@ footer p {
 #home .chain-column .chain-link {
     display: none !important;
 }
+
+/* =====================================
+   TAMBAHAN - dimuat SETELAH style.css
+   (hamburger menu HP, tombol CV, kontak 3 kolom)
+===================================== */
+
+/* TOMBOL HAMBURGER (disembunyikan di desktop) */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid rgba(0, 255, 102, 0.5);
+    color: #00ff66;
+    font-size: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.nav-toggle:hover {
+    background: rgba(0, 255, 102, 0.12);
+    box-shadow: 0 0 12px rgba(0, 255, 102, 0.3);
+}
+
+/* MENU LEBIH RAPAT KARENA ADA 9 ITEM */
+.nav-menu {
+    gap: 18px;
+}
+
+.nav-menu a {
+    font-size: 14px;
+}
+
+/* TOMBOL DOWNLOAD CV */
+.btn i {
+    margin-right: 6px;
+}
+
+/* KONTAK: 3 KARTU */
+.contact-item {
+    flex: 1 1 220px;
+    min-width: 220px;
+}
+
+/* HP */
+@media (max-width: 900px) {
+    .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: space-between !important;
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        padding-top: 10px;
+    }
+
+    .nav-menu.open {
+        display: flex;
+    }
+
+    .nav-menu li {
+        border-top: 1px solid rgba(0, 255, 102, 0.15);
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 12px 4px;
+        font-size: 15px;
+    }
+
+    .nav-menu a:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-item {
+        min-width: 0;
+        width: 100%;
+    }
+}
