@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio D'LyfianDev</title>
+    <title>Portfolio D'LyfianDev | Dimas Alifianto</title>
+    <meta name="description" content="Portfolio Dimas Alifianto - Admin/Operator, aspiring Software Engineer, dan Web Developer dengan minat di administrasi, teknologi informasi, dan jaringan komputer.">
+    <meta property="og:title" content="Portfolio D'LyfianDev | Dimas Alifianto">
+    <meta property="og:description" content="Admin/Operator, aspiring Software Engineer, dan Web Developer.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="ALF.jpeg">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tambahan.css">
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet"
@@ -14,35 +20,23 @@
 
 <body>
 
-    
 <!-- CYBER SCANNER LOADING SCREEN -->
 <div id="loader">
     <div class="scanner-content">
-
         <div class="scanner">
             <div class="scanner-ring"></div>
             <div class="scanner-line"></div>
-
-            <div class="scanner-center">
-                <span>D</span>
-            </div>
+            <div class="scanner-center"><span>D</span></div>
         </div>
-
         <h2>D'LyfianDev<span>.</span></h2>
-
-        <p class="scanner-status">
-            SCANNING SYSTEM...
-        </p>
-
+        <p class="scanner-status">SCANNING SYSTEM...</p>
         <div class="scanner-dots">
             <span></span>
             <span></span>
             <span></span>
         </div>
-
     </div>
 </div>
-
 
     <!-- NAVBAR -->
     <header>
@@ -51,12 +45,17 @@
             <span class="logo-d">D</span><span class="logo-rest">'LyfianDev.</span>
             </h2>
 
-            <ul class="nav-menu">
+            <button class="nav-toggle" id="nav-toggle" aria-label="Buka menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#training">Training</a></li>
+                <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -71,9 +70,7 @@
             <div class="hero-content">
                 <p class="welcome">WELCOME TO MY PORTFOLIO</p>
 
-                <h1>
-                     Dimas Alifian
-                </h1>
+                <h1>Dimas Alifianto</h1>
 
                 <h2 class="hero-role">
                     <span id="typing-text"></span><span class="typing-cursor">|</span>
@@ -89,18 +86,18 @@
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">My Projects</a>
                     <a href="#about" class="btn btn-secondary">About Me</a>
+                    <!-- Taruh file CV di repo dengan nama persis: CV-Dimas-Alifianto.pdf -->
+                    <a href="CV-Dimas-Alifianto.pdf" class="btn btn-secondary" download>
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
                 </div>
             </div>
 
 <!-- HANGING ID CARD -->
 <div class="idcard-container">
 
-    <!-- LANYARD -->
-    
 <!-- DOUBLE FLEXIBLE CHAINS -->
 <div class="idcard-lanyard">
-
-    <!-- LEFT CHAIN -->
     <div class="chain-column chain-left">
         <span class="chain-link"></span>
         <span class="chain-link"></span>
@@ -110,8 +107,6 @@
         <span class="chain-link"></span>
         <span class="chain-link"></span>
     </div>
-
-    <!-- RIGHT CHAIN -->
     <div class="chain-column chain-right">
         <span class="chain-link"></span>
         <span class="chain-link"></span>
@@ -121,9 +116,7 @@
         <span class="chain-link"></span>
         <span class="chain-link"></span>
     </div>
-
 </div>
-
 
     <!-- CLIP -->
     <div class="idcard-clip"></div>
@@ -144,9 +137,7 @@
         <div class="idcard-info">
             <h2>Dimas Alifianto</h2>
             <p class="idcard-role">ADMIN / OPERATOR</p>
-            <span class="idcard-status">
-                IT & TECHNOLOGY ENTHUSIAST
-            </span>
+            <span class="idcard-status">IT & TECHNOLOGY ENTHUSIAST</span>
         </div>
 
         <div class="idcard-footer">
@@ -160,55 +151,31 @@
         </div>
     </section>
 
-    
 <!-- ABOUT SECTION -->
 <section class="section about reveal" id="about">
 
-    <h2 class="section-title">
-        About <span>Me</span>
-    </h2>
+    <h2 class="section-title">About <span>Me</span></h2>
 
     <div class="about-layout">
 
-        <!-- LEFT: INTRODUCTION -->
         <div class="about-content">
 
             <span class="about-label">GET TO KNOW ME</span>
 
-            <h3>
-                Hello, I'm <span>Dimas Alifianto</span>
-            </h3>
+            <h3>Hello, I'm <span>Dimas Alifianto</span></h3>
 
-            <div class="about-role">
-                ADMINISTRATION &amp; IT ENTHUSIAST
-            </div>
+            <div class="about-role">ADMINISTRATION &amp; IT ENTHUSIAST</div>
 
-            <p>
-                I'm an aspiring Software Engineer with experience
-                in computer operations and administrative support.
-            </p>
+            <p>I'm an aspiring Software Engineer with experience in computer operations and administrative support.</p>
 
-            <p>
-                I previously worked as an Admin / Operator at TI.NET,
-                supporting daily operations, customer service,
-                document management, digital file organization,
-                and basic computer troubleshooting.
-            </p>
+            <p>I previously worked as an Admin / Operator at TI.NET, supporting daily operations, customer service, document management, digital file organization, and basic computer troubleshooting.</p>
 
-            <p>
-                Currently, I'm developing my knowledge in Software
-                Engineering, Web Development, and Computer Networking
-                through independent learning and hands-on projects.
-            </p>
+            <p>Currently, I'm developing my knowledge in Software Engineering, Web Development, and Computer Networking through independent learning and hands-on projects.</p>
 
-            <p>
-                I'm passionate about technology, continuous learning,
-                and finding practical solutions to everyday problems.
-            </p>
+            <p>I'm passionate about technology, continuous learning, and finding practical solutions to everyday problems.</p>
 
         </div>
 
-        <!-- RIGHT: PROFILE HIGHLIGHTS -->
         <div class="about-highlights">
 
             <div class="about-info-card">
@@ -247,7 +214,6 @@
 
     </div>
 
-    
 <!-- MY JOURNEY TIMELINE -->
 <div class="journey-section">
 
@@ -259,67 +225,31 @@
 
     <div class="journey-timeline">
 
-        <!-- EDUCATION -->
         <div class="journey-item">
-
-            <div class="journey-icon">
-                <i class="fas fa-graduation-cap"></i>
-            </div>
-
+            <div class="journey-icon"><i class="fas fa-graduation-cap"></i></div>
             <div class="journey-card">
                 <span class="journey-category">EDUCATION</span>
                 <h4>My Education Journey</h4>
-
-                <p>
-                    Started my educational journey at
-                    MI Darussalam Serui, continued at
-                    MTS Darussalam Serui, and pursued
-                    further studies at MA Al-Bairuny.
-                </p>
+                <p>Started my educational journey at MI Darussalam Serui, continued at MTS Darussalam Serui, and pursued further studies at MA Al-Bairuny.</p>
             </div>
-
         </div>
 
-        <!-- WORK EXPERIENCE -->
         <div class="journey-item">
-
-            <div class="journey-icon">
-                <i class="fas fa-briefcase"></i>
-            </div>
-
+            <div class="journey-icon"><i class="fas fa-briefcase"></i></div>
             <div class="journey-card">
                 <span class="journey-category">2024 - 2026</span>
                 <h4>Admin / Operator at TI.NET</h4>
-
-                <p>
-                    Gained practical experience in daily
-                    computer operations, customer service,
-                    document management, data entry,
-                    and basic troubleshooting.
-                </p>
+                <p>Gained practical experience in daily computer operations, customer service, document management, data entry, and basic troubleshooting.</p>
             </div>
-
         </div>
 
-        <!-- TECHNOLOGY LEARNING -->
         <div class="journey-item">
-
-            <div class="journey-icon">
-                <i class="fas fa-laptop-code"></i>
-            </div>
-
+            <div class="journey-icon"><i class="fas fa-laptop-code"></i></div>
             <div class="journey-card">
                 <span class="journey-category">CURRENTLY LEARNING</span>
                 <h4>Exploring Technology</h4>
-
-                <p>
-                    Currently developing my knowledge
-                    in Software Engineering, Web Development,
-                    and Computer Networking through
-                    independent learning and practical projects.
-                </p>
+                <p>Currently developing my knowledge in Software Engineering, Web Development, and Computer Networking through independent learning and practical projects.</p>
             </div>
-
         </div>
 
     </div>
@@ -328,27 +258,18 @@
 
 </section>
 
-    
-
 <!-- EXPERIENCE SECTION -->
 <section class="section experience reveal-left" id="experience">
 
-    <h2 class="section-title">
-        Work <span>Experience</span>
-    </h2>
+    <h2 class="section-title">Work <span>Experience</span></h2>
 
-    <!-- ADMIN / OPERATOR -->
     <div class="experience-card admin-card">
 
         <div class="experience-header">
             <div>
-                <h3>
-                    <i class="fas fa-desktop"></i>
-                    Admin / Operator
-                </h3>
+                <h3><i class="fas fa-desktop"></i> Admin / Operator</h3>
                 <h4>TI.NET</h4>
             </div>
-
             <span class="experience-date">2024 - 2026</span>
         </div>
 
@@ -356,7 +277,7 @@
             Responsible for supporting daily operations, customer service, and administrative activities.
         </p>
 
-        <h4 class="responsibility-title">Tanggung Jawab:</h4>
+        <h4 class="responsibility-title">Responsibilities:</h4>
 
         <ul class="responsibility-list">
             <li>Provided customer service and operational assistance.</li>
@@ -369,18 +290,13 @@
 
     </div>
 
-    <!-- NETWORK TECHNICIAN -->
     <div class="experience-card network-card">
 
         <div class="experience-header">
             <div>
-                <h3>
-                    <i class="fas fa-network-wired"></i>
-                    Network Technician (Practical Experience)
-                </h3>
+                <h3><i class="fas fa-network-wired"></i> Network Technician (Practical Experience)</h3>
                 <h4>PT XLSMART</h4>
             </div>
-
             <span class="experience-date">2025 - 2026</span>
         </div>
 
@@ -388,7 +304,7 @@
             Supported technical operations related to network services and troubleshooting.
         </p>
 
-        <h4 class="responsibility-title">Tanggung Jawab:</h4>
+        <h4 class="responsibility-title">Responsibilities:</h4>
 
         <ul class="responsibility-list">
             <li>Assisted with technical support activities.</li>
@@ -402,45 +318,33 @@
 
 </section>
 
-
-    
 <!-- EDUCATION SECTION -->
 <section class="section education reveal" id="education">
 
-    <h2 class="section-title">
-        My <span>Education</span>
-    </h2>
+    <h2 class="section-title">My <span>Education</span></h2>
 
     <div class="education-grid">
 
-        <!-- MI -->
         <div class="education-card">
             <h3>MI Darussalam Serui</h3>
             <p>Madrasah Ibtidaiyah</p>
         </div>
 
-        <!-- MTS -->
         <div class="education-card">
             <h3>MTS Darussalam Serui</h3>
             <p>Madrasah Tsanawiyah</p>
         </div>
 
-        <!-- MA -->
         <div class="education-card">
             <h3>MA Al-Bairuny</h3>
             <p>Social Sciences (IPS)</p>
-            <p>
-                Completed an upper-secondary education
-                program with a focus on Social Sciences.
-            </p>
+            <p>Completed an upper-secondary education program with a focus on Social Sciences.</p>
         </div>
 
     </div>
 
 </section>
 
-
-    
 <!-- TRAINING SECTION -->
 <section class="section training reveal-right" id="training">
    <h2 class="section-title training-title">Training</h2>
@@ -449,137 +353,83 @@
 
         <div class="training-card">
             <h3>Capital Market School</h3>
-            <p>
-                Participated in an educational training program
-                covering basic capital market knowledge and investment.
-            </p>
-            <p>
-                <strong>Status:</strong> Training completed.
-            </p>
+            <p>Participated in an educational training program covering basic capital market knowledge and investment.</p>
+            <p><strong>Status:</strong> Training completed.</p>
         </div>
 
         <div class="training-card">
             <h3>Software Engineering</h3>
-            <p>
-                Studying software engineering fundamentals,
-                including algorithms, variables, flowcharts,
-                and problem-solving.
-            </p>
-            <p>
-                <strong>Status:</strong> Self-learning.
-            </p>
+            <p>Studying software engineering fundamentals, including algorithms, variables, flowcharts, and problem-solving.</p>
+            <p><strong>Status:</strong> Self-learning.</p>
         </div>
 
         <div class="training-card">
             <h3>Web Development</h3>
-            <p>
-                Learning website development using HTML, CSS,
-                and GitHub Pages through practical projects.
-            </p>
-            <p>
-                <strong>Status:</strong> Self-learning.
-            </p>
+            <p>Learning website development using HTML, CSS, and GitHub Pages through practical projects.</p>
+            <p><strong>Status:</strong> Self-learning.</p>
         </div>
 
         <div class="training-card">
             <h3>Computer Networking</h3>
-            <p>
-                Practicing basic networking concepts,
-                network configuration, and network simulation
-                using Cisco Packet Tracer.
-            </p>
-            <p>
-                <strong>Status:</strong> Practical learning.
-            </p>
+            <p>Practicing basic networking concepts, network configuration, and network simulation using Cisco Packet Tracer.</p>
+            <p><strong>Status:</strong> Practical learning.</p>
         </div>
 
         <div class="training-card">
             <h3>Microsoft Office</h3>
-            <p>
-                Developing practical skills in Microsoft Word,
-                Microsoft Excel, and PowerPoint.
-            </p>
-            <p>
-                <strong>Status:</strong> Skill development.
-            </p>
+            <p>Developing practical skills in Microsoft Word, Microsoft Excel, and PowerPoint.</p>
+            <p><strong>Status:</strong> Skill development.</p>
         </div>
 
     </div>
 </section>
 
-                <!-- CERTIFICATES SECTION -->
+<!-- CERTIFICATES SECTION -->
 <section class="section certificates reveal-left" id="certificates">
 
-    <h2 class="section-title">
-        Certificates <span>& Achievements</span>
-    </h2>
+    <h2 class="section-title">Certificates <span>&amp; Achievements</span></h2>
 
     <div class="certificates-grid">
 
-        <!-- GITHUB CERTIFICATE -->
         <div class="certificate-card">
 
             <div class="certificate-image">
-                <a href="github-certificate.png" target="_blank">
-                    <img src="github-certificate.png"
-                         alt="GitHub Fundamentals Certificate">
+                <a href="github-certificate.png" target="_blank" rel="noopener noreferrer">
+                    <img src="github-certificate.png" alt="GitHub Fundamentals Certificate" loading="lazy">
                 </a>
             </div>
 
             <div class="certificate-info">
-                <h3>
-                    <i class="fab fa-github"></i>
-                    GitHub Fundamentals
-                </h3>
-
-                <p>
-                    Certificate of Completion in GitHub Fundamentals,
-                    including Repository, Git, Commit, Push, Pull,
-                    and GitHub Pages.
-                </p>
-
+                <h3><i class="fab fa-github"></i> GitHub Fundamentals</h3>
+                <p>Certificate of Completion in GitHub Fundamentals, including Repository, Git, Commit, Push, Pull, and GitHub Pages.</p>
                 <span>October 29, 2026</span>
             </div>
 
         </div>
 
-        
-<!-- W3SCHOOLS HTML CERTIFICATE -->
-<div class="certificate-card">
+        <div class="certificate-card">
 
-    <div class="certificate-image">
-        <a href="HTML.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="HTML.jpeg"
-                 alt="W3Schools Certified HTML Developer Certificate">
-        </a>
+            <div class="certificate-image">
+                <a href="HTML.jpeg" target="_blank" rel="noopener noreferrer">
+                    <img src="HTML.jpeg" alt="W3Schools Certified HTML Developer Certificate" loading="lazy">
+                </a>
+            </div>
+
+            <div class="certificate-info">
+                <h3><i class="fab fa-html5"></i> Certified HTML Developer</h3>
+                <p>Successfully passed the W3Schools HTML certification exam at the Professional level.</p>
+                <span>February 24, 2025</span>
+                <p>
+                    <a href="https://verify.w3schools.com/10MS90MH1" target="_blank" rel="noopener noreferrer">
+                        Verify Certificate ↗
+                    </a>
+                </p>
+            </div>
+
+        </div>
+
     </div>
-
-    <div class="certificate-info">
-        <h3>
-            <i class="fab fa-html5"></i>
-            Certified HTML Developer
-        </h3>
-
-        <p>
-            Successfully passed the W3Schools HTML
-            certification exam at the Professional level.
-        </p>
-
-        <span>February 24, 2025</span>
-
-        <p>
-            <a href="https://verify.w3schools.com/10MS90MH1"
-               target="_blank"
-               rel="noopener noreferrer">
-                Verify Certificate ↗
-            </a>
-        </p>
-    </div>
-
-</div>
-</div>
 </section>
-
 
 <!-- SKILLS SECTION -->
 <section class="section reveal" id="skills">
@@ -587,13 +437,10 @@
 
     <div class="icon-skills-grid">
 
-        <!-- CARD 1 -->
         <div class="icon-skill-card">
             <div class="skill-icon">💻</div>
-            <h3>Computer & Hardware</h3>
-            <p>
-                Proficiency in computer operation, device management, and basic troubleshooting.
-            </p>
+            <h3>Computer &amp; Hardware</h3>
+            <p>Proficiency in computer operation, device management, and basic troubleshooting.</p>
             <div class="skill-tags">
                 <span>Computer Operation</span>
                 <span>Hardware Basics</span>
@@ -603,14 +450,10 @@
             </div>
         </div>
 
-        <!-- CARD 2 -->
         <div class="icon-skill-card">
             <div class="skill-icon">🌐</div>
-            <h3>Networking & Technical Support</h3>
-            <p>
-                Basic knowledge of computer networks,
-                internet connectivity, and technical support.
-            </p>
+            <h3>Networking &amp; Technical Support</h3>
+            <p>Basic knowledge of computer networks, internet connectivity, and technical support.</p>
             <div class="skill-tags">
                 <span>Network Fundamentals</span>
                 <span>IP Addressing Basics</span>
@@ -620,13 +463,10 @@
             </div>
         </div>
 
-        <!-- CARD 3 -->
         <div class="icon-skill-card">
             <div class="skill-icon">⌨️</div>
-            <h3>Programming & Development</h3>
-            <p>
-               Basic programming and website development skills.
-            </p>
+            <h3>Programming &amp; Development</h3>
+            <p>Basic programming and website development skills.</p>
             <div class="skill-tags">
                 <span>HTML</span>
                 <span>CSS</span>
@@ -638,183 +478,113 @@
 
     </div>
 
-    
-
 <!-- TECHNOLOGIES & TOOLS -->
 <div class="tech-stack">
 
-    <h3 class="tech-stack-title">
-        Technologies <span>& Tools</span>
-    </h3>
+    <h3 class="tech-stack-title">Technologies <span>&amp; Tools</span></h3>
 
     <div class="tech-logo-grid">
 
-        <div class="tech-logo-card">
-            <i class="fa-brands fa-html5"></i>
-            <p>HTML5</p>
-        </div>
-
-        <div class="tech-logo-card">
-            <i class="fa-brands fa-css3-alt"></i>
-            <p>CSS3</p>
-        </div>
-
-        <div class="tech-logo-card">
-            <i class="fa-brands fa-js"></i>
-            <p>JavaScript</p>
-        </div>
-
-        <div class="tech-logo-card">
-            <i class="fa-brands fa-github"></i>
-            <p>GitHub</p>
-        </div>
-
-        <div class="tech-logo-card">
-            <i class="fa-brands fa-git-alt"></i>
-            <p>Git</p>
-        </div>
-
-        <div class="tech-logo-card">
-            <i class="fa-brands fa-python"></i>
-            <p>Python</p>
-        </div>
-
-        <div class="tech-logo-card">
-            <i class="fa-brands fa-linux"></i>
-            <p>Linux</p>
-        </div>
-
-        <div class="tech-logo-card">
-            <i class="fa-solid fa-network-wired"></i>
-            <p>Networking</p>
-        </div>
-
-        <div class="tech-logo-card">
-            <i class="fa-solid fa-database"></i>
-            <p>Database</p>
-        </div>
-
-        <div class="tech-logo-card">
-            <i class="fa-solid fa-server"></i>
-            <p>Server</p>
-        </div>
-
-        <div class="tech-logo-card">
-            <i class="fa-solid fa-terminal"></i>
-            <p>Terminal</p>
-        </div>
-
-        <div class="tech-logo-card">
-            <i class="fa-solid fa-code"></i>
-            <p>Programming</p>
-        </div>
+        <div class="tech-logo-card"><i class="fa-brands fa-html5"></i><p>HTML5</p></div>
+        <div class="tech-logo-card"><i class="fa-brands fa-css3-alt"></i><p>CSS3</p></div>
+        <div class="tech-logo-card"><i class="fa-brands fa-js"></i><p>JavaScript</p></div>
+        <div class="tech-logo-card"><i class="fa-brands fa-github"></i><p>GitHub</p></div>
+        <div class="tech-logo-card"><i class="fa-brands fa-git-alt"></i><p>Git</p></div>
+        <div class="tech-logo-card"><i class="fa-brands fa-python"></i><p>Python</p></div>
+        <div class="tech-logo-card"><i class="fa-brands fa-linux"></i><p>Linux</p></div>
+        <div class="tech-logo-card"><i class="fa-solid fa-network-wired"></i><p>Networking</p></div>
+        <div class="tech-logo-card"><i class="fa-solid fa-database"></i><p>Database</p></div>
+        <div class="tech-logo-card"><i class="fa-solid fa-server"></i><p>Server</p></div>
+        <div class="tech-logo-card"><i class="fa-solid fa-terminal"></i><p>Terminal</p></div>
+        <div class="tech-logo-card"><i class="fa-solid fa-code"></i><p>Programming</p></div>
 
     </div>
 </div>
 
-
 </section>
 
-
-   <!-- PROJECTS SECTION -->
+<!-- PROJECTS SECTION -->
 <section class="section projects reveal-left" id="projects">
     <h2 class="section-title">My <span>Projects</span></h2>
 
     <div class="projects-grid">
 
-        <!-- PROJECT 1 -->
         <div class="project-card">
             <h3>Personal Portfolio</h3>
-
-            <p>
-                A personal portfolio website showcasing my profile,
-                work experience, skills, and learning journey.
-            </p>
-
+            <p>A personal portfolio website showcasing my profile, work experience, skills, and learning journey.</p>
             <div class="project-tech">
                 <span>HTML</span>
                 <span>CSS</span>
+                <span>JavaScript</span>
                 <span>GitHub Pages</span>
             </div>
-
-            <a href="https://github.com/dimasalifyanto-gif/portfolio-dimasdev"
-               target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/dimasalifyanto-gif/portfolio-dimasdev" target="_blank" rel="noopener noreferrer">
                 View on GitHub →
             </a>
         </div>
 
-        <!-- PROJECT 2 -->
         <div class="project-card">
             <h3>Software Engineering Practice</h3>
-
-            <p>
-                Practical programming exercises involving algorithms,
-                variables, input, process, output, and problem-solving.
-            </p>
-
+            <p>Practical programming exercises involving algorithms, variables, input, process, output, and problem-solving.</p>
             <div class="project-tech">
                 <span>Programming</span>
                 <span>Algorithms</span>
                 <span>Problem Solving</span>
             </div>
+            <!-- Setelah kode latihan diupload ke GitHub, aktifkan baris di bawah dan ganti URL-nya:
+            <a href="https://github.com/dimasalifyanto-gif/NAMA-REPO" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+            -->
         </div>
 
-        <!-- PROJECT 3 -->
         <div class="project-card">
             <h3>Network Simulation</h3>
-
-            <p>
-                Basic network configuration and connectivity testing
-                using Cisco Packet Tracer.
-            </p>
-
+            <p>Basic network configuration and connectivity testing using Cisco Packet Tracer.</p>
             <div class="project-tech">
                 <span>Networking</span>
                 <span>IP Address</span>
                 <span>Cisco Packet Tracer</span>
             </div>
+            <!-- Setelah file .pkt atau screenshot topologi diupload, aktifkan baris di bawah dan ganti URL-nya:
+            <a href="https://github.com/dimasalifyanto-gif/NAMA-REPO" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+            -->
         </div>
 
     </div>
 </section>
 
-  
 <!-- CONTACT SECTION -->
 <section class="section reveal" id="contact">
     <h2 class="section-title">Contact <span>Me</span></h2>
 
     <div class="contact-content">
         <p>Thank you for visiting my portfolio!</p>
-        <p>
-            Feel free to contact me for discussions, opportunities, or potential collaborations
-        </p>
+        <p>Feel free to contact me for discussions, opportunities, or potential collaborations.</p>
 
         <div class="contact-info">
             <div class="contact-item">
                 <h3>Email</h3>
-                <a href="mailto:dimasalifyanto@gmail.com">
-                    dimasalifyanto@gmail.com
-                </a>
+                <a href="mailto:dimasalifyanto@gmail.com">dimasalifyanto@gmail.com</a>
             </div>
 
             <div class="contact-item">
                 <h3>WhatsApp</h3>
-                <a href="https://wa.me/6282189387675" target="_blank">
-                    +62 821 8938 7675
-                </a>
+                <a href="https://wa.me/6282189387675" target="_blank" rel="noopener noreferrer">+62 821 8938 7675</a>
+            </div>
+
+            <div class="contact-item">
+                <h3>GitHub</h3>
+                <a href="https://github.com/dimasalifyanto-gif" target="_blank" rel="noopener noreferrer">github.com/dimasalifyanto-gif</a>
             </div>
         </div>
     </div>
 </section>
+
     <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 DimasDev. Created by Dimas Alifianto.</p>
     </footer>
 
-  
-<!-- =====================================
-     ANIMASI SCROLL
-===================================== -->
+<!-- SCROLL REVEAL ANIMATION -->
 <script>
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -822,21 +592,13 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.add("active");
         }
     });
-}, {
-    threshold: 0.15
-});
+}, { threshold: 0.15 });
 
-document.querySelectorAll(
-    ".reveal, .reveal-left, .reveal-right"
-).forEach((element) => {
-    observer.observe(element);
-});
+document.querySelectorAll(".reveal, .reveal-left, .reveal-right")
+    .forEach((element) => observer.observe(element));
 </script>
 
-
-<!-- =====================================
-     TYPING TEXT ANIMATION
-===================================== -->
+<!-- TYPING TEXT ANIMATION -->
 <script>
 const typingText = document.getElementById("typing-text");
 
@@ -856,12 +618,10 @@ function typeEffect() {
     const currentRole = roles[roleIndex];
 
     if (isDeleting) {
-        typingText.textContent =
-            currentRole.substring(0, charIndex - 1);
+        typingText.textContent = currentRole.substring(0, charIndex - 1);
         charIndex--;
     } else {
-        typingText.textContent =
-            currentRole.substring(0, charIndex + 1);
+        typingText.textContent = currentRole.substring(0, charIndex + 1);
         charIndex++;
     }
 
@@ -882,146 +642,90 @@ function typeEffect() {
 typeEffect();
 </script>
 
-
-<!-- =====================================
-     CYBER SCANNER LOADING
-===================================== -->
+<!-- LOADING SCREEN -->
 <script>
 window.addEventListener("load", function () {
-
     const loader = document.getElementById("loader");
     if (!loader) return;
-
     setTimeout(function () {
         loader.classList.add("loader-hidden");
     }, 1800);
-
 });
 </script>
 
-
-<!-- =====================================
-     SCROLL REVEAL ANIMATION
-===================================== -->
+<!-- HAMBURGER MENU (HP) -->
 <script>
-const revealElements = document.querySelectorAll(".reveal");
+(function () {
+    const toggle = document.getElementById("nav-toggle");
+    const menu = document.getElementById("nav-menu");
+    if (!toggle || !menu) return;
 
-const revealObserver = new IntersectionObserver((entries) => {
-
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-        }
+    toggle.addEventListener("click", function () {
+        const open = menu.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
 
-}, {
-    threshold: 0.15
-});
-
-revealElements.forEach((element) => {
-    revealObserver.observe(element);
-});
+    menu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            menu.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+        });
+    });
+})();
 </script>
 
-
-
-
-<!-- =====================================
-     ID CARD - CONTINUOUS WHIP ROPE PHYSICS
-===================================== -->
+<!-- ID CARD - CONTINUOUS WHIP ROPE PHYSICS -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    const idCard = document.querySelector(
-        "#home .idcard-container"
-    );
-
+    const idCard = document.querySelector("#home .idcard-container");
     if (!idCard) return;
 
-    const lanyard = idCard.querySelector(
-        ".idcard-lanyard"
-    );
-
+    const lanyard = idCard.querySelector(".idcard-lanyard");
     if (!lanyard) return;
 
-    const columns = Array.from(
-        lanyard.querySelectorAll(".chain-column")
-    );
-
+    const columns = Array.from(lanyard.querySelectorAll(".chain-column"));
     if (columns.length < 2) return;
 
-
-    /* STATE KEDUA TALI */
     const ropes = columns.map((column, index) => ({
         element: column,
         side: index === 0 ? -1 : 1,
-
-        angle: 0,
-        angleVelocity: 0,
-        targetAngle: 0,
-
-        shift: 0,
-        shiftVelocity: 0,
-        targetShift: 0,
-
-        bend: 0,
-        bendVelocity: 0,
-        targetBend: 0
+        angle: 0, angleVelocity: 0, targetAngle: 0,
+        shift: 0, shiftVelocity: 0, targetShift: 0,
+        bend: 0, bendVelocity: 0, targetBend: 0
     }));
 
     let active = false;
     let running = false;
-
     let previousX = 0;
     let previousY = 0;
     let previousTime = 0;
 
-
-    /* BATAS NILAI */
     function clamp(value, min, max) {
         return Math.max(min, Math.min(max, value));
     }
 
-
-    /* ANIMASI PEGAS */
     function animateRopes() {
 
         let settled = true;
 
         ropes.forEach(function (rope) {
 
-            /* GERAKAN SUDUT */
-            rope.angleVelocity +=
-                (rope.targetAngle - rope.angle) * 0.20;
-
+            rope.angleVelocity += (rope.targetAngle - rope.angle) * 0.20;
             rope.angleVelocity *= 0.76;
             rope.angle += rope.angleVelocity;
 
-
-            /* GERAKAN SAMPING */
-            rope.shiftVelocity +=
-                (rope.targetShift - rope.shift) * 0.22;
-
+            rope.shiftVelocity += (rope.targetShift - rope.shift) * 0.22;
             rope.shiftVelocity *= 0.74;
             rope.shift += rope.shiftVelocity;
 
-
-            /* LENTURAN TALI */
-            rope.bendVelocity +=
-                (rope.targetBend - rope.bend) * 0.18;
-
+            rope.bendVelocity += (rope.targetBend - rope.bend) * 0.18;
             rope.bendVelocity *= 0.76;
             rope.bend += rope.bendVelocity;
 
-
-            /* TERAPKAN KE TALI UTUH */
             rope.element.style.transform =
-                `translateX(${rope.shift}px)
-                 rotate(${rope.angle}deg)
-                 skewX(${rope.bend}deg)`;
+                `translateX(${rope.shift}px) rotate(${rope.angle}deg) skewX(${rope.bend}deg)`;
 
-
-            /* CEK STABILITAS */
             if (
                 Math.abs(rope.angle - rope.targetAngle) > 0.02 ||
                 Math.abs(rope.shift - rope.targetShift) > 0.02 ||
@@ -1035,13 +739,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-
         if (settled && !active) {
-
             ropes.forEach(function (rope) {
                 rope.element.style.transform = "";
             });
-
             running = false;
             return;
         }
@@ -1049,63 +750,37 @@ document.addEventListener("DOMContentLoaded", function () {
         requestAnimationFrame(animateRopes);
     }
 
-
     function startAnimation() {
         if (running) return;
-
         running = true;
         requestAnimationFrame(animateRopes);
     }
 
-
-    /* MOUSE MASUK */
     idCard.addEventListener("pointerenter", function (event) {
-
         if (event.pointerType === "touch") return;
-
         active = true;
         idCard.classList.add("pointer-active");
-
     });
 
-
-    /* MOUSE BERGERAK */
     idCard.addEventListener("pointermove", function (event) {
 
         if (event.pointerType === "touch") return;
 
         const rect = idCard.getBoundingClientRect();
 
-        const x = clamp(
-            ((event.clientX - rect.left) / rect.width - 0.5) * 2,
-            -1, 1
-        );
-
-        const y = clamp(
-            ((event.clientY - rect.top) / rect.height - 0.5) * 2,
-            -1, 1
-        );
+        const x = clamp(((event.clientX - rect.left) / rect.width - 0.5) * 2, -1, 1);
+        const y = clamp(((event.clientY - rect.top) / rect.height - 0.5) * 2, -1, 1);
 
         const now = performance.now();
+        const delta = previousTime ? Math.max(8, now - previousTime) : 16;
 
-        const delta = previousTime
-            ? Math.max(8, now - previousTime)
-            : 16;
-
-        const velocityX = previousTime
-            ? clamp((x - previousX) * 16 / delta, -0.12, 0.12)
-            : 0;
-
-        const velocityY = previousTime
-            ? clamp((y - previousY) * 16 / delta, -0.12, 0.12)
-            : 0;
+        const velocityX = previousTime ? clamp((x - previousX) * 16 / delta, -0.12, 0.12) : 0;
+        const velocityY = previousTime ? clamp((y - previousY) * 16 / delta, -0.12, 0.12) : 0;
 
         previousX = x;
         previousY = y;
         previousTime = now;
 
-
-        /* GERAKAN ID CARD */
         idCard.style.transform =
             `perspective(900px)
              translate3d(${x * 4}px, ${y * 3}px, 0)
@@ -1113,34 +788,14 @@ document.addEventListener("DOMContentLoaded", function () {
              rotateY(${x * 10}deg)
              rotateZ(${x * 4}deg)`;
 
-
-        /* GERAKAN KEDUA TALI */
         ropes.forEach(function (rope) {
 
             const side = rope.side;
+            const wave = Math.sin(x * 1.3 + side * 0.8);
 
-            const wave = Math.sin(
-                x * 1.3 + side * 0.8
-            );
-
-            /* SUDUT AYUNAN */
-            rope.targetAngle =
-                x * 13 +
-                y * 5 +
-                side * wave * 4 +
-                velocityX * 65;
-
-            /* PERGESERAN */
-            rope.targetShift =
-                x * 5 +
-                velocityX * 35 +
-                side * wave * 2;
-
-            /* LENTURAN / WHIP */
-            rope.targetBend =
-                y * 7 +
-                velocityX * 90 * side +
-                wave * 3;
+            rope.targetAngle = x * 13 + y * 5 + side * wave * 4 + velocityX * 65;
+            rope.targetShift = x * 5 + velocityX * 35 + side * wave * 2;
+            rope.targetBend = y * 7 + velocityX * 90 * side + wave * 3;
 
         });
 
@@ -1148,12 +803,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-
-    /* MOUSE KELUAR */
     idCard.addEventListener("pointerleave", function () {
 
         active = false;
-
         idCard.classList.remove("pointer-active");
         idCard.style.transform = "";
 
@@ -1161,23 +813,18 @@ document.addEventListener("DOMContentLoaded", function () {
         previousY = 0;
         previousTime = 0;
 
-
-        /* TALI KEMBALI KE POSISI NORMAL */
         ropes.forEach(function (rope) {
             rope.targetAngle = 0;
             rope.targetShift = 0;
             rope.targetBend = 0;
         });
 
-        /* EFEK AYUNAN PEGAS */
         startAnimation();
 
     });
 
 });
 </script>
-
-
 
 </body>
 </html>
