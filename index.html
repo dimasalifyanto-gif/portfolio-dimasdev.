@@ -20,21 +20,25 @@
 
 <body>
 
-<!-- CYBER SCANNER LOADING SCREEN -->
+<!-- LOADER SEREM - BREACH -->
 <div id="loader">
-    <div class="scanner-content">
-        <div class="scanner">
-            <div class="scanner-ring"></div>
-            <div class="scanner-line"></div>
-            <div class="scanner-center"><span>D</span></div>
+    <div class="flash"></div>
+    <div class="stage">
+
+        <div class="terminal" aria-hidden="true">
+            <span class="tl red head l0">[!] SECURITY ALERT</span>
+            <span class="tl red l1">&gt; UNAUTHORIZED ACCESS DETECTED</span>
+            <span class="tl red l2">&gt; TRACING INTRUDER...</span>
+            <span class="tl green l3">&gt; OVERRIDE SUCCESSFUL</span>
         </div>
-        <h2>D'LyfianDev<span>.</span></h2>
-        <p class="scanner-status">SCANNING SYSTEM...</p>
-        <div class="scanner-dots">
-            <span></span>
-            <span></span>
-            <span></span>
+
+        <div class="name-loader">
+            <div class="name-word" role="img" aria-label="D'LyfianDEV">
+                <span class="ch white">D</span><span class="ch green">'Lyfian</span><span class="dev-badge"><span class="ch">DEV</span></span>
+            </div>
+            <div class="name-sub">PERSONAL PORTFOLIO</div>
         </div>
+
     </div>
 </div>
 
@@ -641,36 +645,31 @@ function typeEffect() {
 typeEffect();
 </script>
 
-<!-- LOADING SCREEN -->
-<script>
-window.addEventListener("load", function () {
-    const loader = document.getElementById("loader");
-    if (!loader) return;
-    setTimeout(function () {
-        loader.classList.add("loader-hidden");
-    }, 1800);
-});
-</script>
-
-<!-- HAMBURGER MENU (HP) -->
+<!-- LOADER SEREM - BREACH -->
 <script>
 (function () {
-    const toggle = document.getElementById("nav-toggle");
-    const menu = document.getElementById("nav-menu");
-    if (!toggle || !menu) return;
+    var loader = document.getElementById("loader");
+    if (!loader) return;
 
-    toggle.addEventListener("click", function () {
-        const open = menu.classList.toggle("open");
-        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    var DURATION = 4600;
+    var pageLoaded = document.readyState === "complete";
+    var finished = false;
+
+    function hide() {
+        loader.classList.add("loader-hidden");
+    }
+
+    window.addEventListener("load", function () {
+        pageLoaded = true;
+        if (finished) hide();
     });
 
-    menu.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", function () {
-            menu.classList.remove("open");
-            toggle.setAttribute("aria-expanded", "false");
-        });
-    });
+    setTimeout(function () {
+        finished = true;
+        if (pageLoaded) hide();
+    }, DURATION);
 })();
+</script>
 </script>
 
 <!-- ID CARD - CONTINUOUS WHIP ROPE PHYSICS -->
